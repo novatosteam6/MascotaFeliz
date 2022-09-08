@@ -13,26 +13,41 @@ namespace MascotaFeliz.App.Consola
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Dueño!");
-            AddDueno();
+           // Console.WriteLine("Hello Dueño!");
+           // AddDueno();
 
-            Console.WriteLine("Hello Veterinario!");
-            AddVeterinario();
+           // Console.WriteLine("Hello Veterinario!");
+           // AddVeterinario();
 
-            Console.WriteLine("Hello Mascota!");
-            AddMascota();
+           // Console.WriteLine("Hello Mascota!");
+           // AddMascota();
+
+            Console.WriteLine("Dueño con id 3!");
+            BuscarDueno(3);
+
+            Console.WriteLine("Todos los dueños!");
+            ListarDuenos();
+
+            Console.WriteLine("Mascota con id 2!");
+            BuscarMascota(2);
+
+            Console.WriteLine("Todas las mascotas!");
+            ListarMascotas();
         }
+
+
+
 
         private static void AddDueno()
         {
             var dueno = new Dueno
             {
                 Cedula = "1212",
-                Nombres = "Juan",
-                Apellidos = "Sin Miedo",
-                Direccion = "Bajo un puente",
+                Nombres = "Pedro",
+                Apellidos = "Perez",
+                Direccion = "calle falsa 123",
                 Telefono = "1234567891",
-                Correo = "juansinmiedo@gmail.com"
+                Correo = "pedroperez@gmail.com"
             };
             _repoDueno.AddDueno(dueno);
         }
@@ -51,16 +66,54 @@ namespace MascotaFeliz.App.Consola
             _repoVeterinario.AddVeterinario(veterinario);
         }
 
+
+
          private static void AddMascota()
         {
             var mascota = new Mascota
             {
-                Nombre = "Rufo",
-                Color = "Cafe",
-                Especie = "Canino",
-                Raza = "Bulldog",
+                Nombre = "Canela",
+                Color = "Blanco",
+                Especie = "Felino",
+                Raza = "Angora",
             };
             _repoMascota.AddMascota(mascota);
         }
+
+
+
+        private static void BuscarDueno(int idDueno)
+        {
+            var dueno = _repoDueno.GetDueno(idDueno);
+            Console.WriteLine(dueno.Cedula + " " + dueno.Nombres + " " + dueno.Apellidos + " " + dueno.Direccion + " " + dueno.Telefono + " " + dueno.Correo);
+        }
+
+
+        private static void ListarDuenos()
+        {
+            var duenos = _repoDueno.GetAllDuenos();
+            foreach (Dueno d in duenos)
+            {
+                Console.WriteLine(d.Nombres + " " + d.Apellidos);
+            }
+        }
+
+
+        private static void BuscarMascota(int idMascota)
+        {
+            var mascota = _repoMascota.GetMascota(idMascota);
+            Console.WriteLine(mascota.Nombre + " " + mascota.Color + " " + mascota.Especie + " " + mascota.Raza);
+        }
+
+
+        private static void ListarMascotas()
+        {
+            var mascotas = _repoMascota.GetAllMascotas();
+            foreach (Mascota m in mascotas)
+            {
+                Console.WriteLine(m.Nombre + " " + m.Color + " " + m.Especie + " " + m.Raza);
+            }
+        }
+
     }
 }
