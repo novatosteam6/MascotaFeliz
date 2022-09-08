@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MascotaFeliz.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    [Migration("20220906030953_segunda")]
-    partial class segunda
+    [Migration("20220908202031_Inicial")]
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -85,6 +85,9 @@ namespace MascotaFeliz.App.Persistencia.Migrations
                     b.Property<string>("Apellidos")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Cedula")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Direccion")
                         .HasColumnType("nvarchar(max)");
 
@@ -96,9 +99,6 @@ namespace MascotaFeliz.App.Persistencia.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefono")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cedula")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -163,7 +163,7 @@ namespace MascotaFeliz.App.Persistencia.Migrations
                 {
                     b.HasBaseType("MascotaFeliz.App.Dominio.Persona");
 
-                    b.Property<string>("TarjetaProfecional")
+                    b.Property<string>("TarjetaProfesional")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("Veterinario");

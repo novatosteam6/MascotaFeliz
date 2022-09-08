@@ -7263,19 +7263,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Familia\\.nuget\\packages\\": {}
+    "C:\\Users\\Juank\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Mascotas\\MascotaFeliz.App\\MascotaFeliz.App.Persistencia\\MascotaFeliz.App.Persistencia.csproj",
+      "projectUniqueName": "C:\\Users\\Juank\\Desktop\\proyectoCiclo3\\mascotas\\mascotafeliz.app\\MascotaFeliz.App.Persistencia\\MascotaFeliz.App.Persistencia.csproj",
       "projectName": "MascotaFeliz.App.Persistencia",
-      "projectPath": "C:\\Mascotas\\MascotaFeliz.App\\MascotaFeliz.App.Persistencia\\MascotaFeliz.App.Persistencia.csproj",
-      "packagesPath": "C:\\Users\\Familia\\.nuget\\packages\\",
-      "outputPath": "C:\\Mascotas\\MascotaFeliz.App\\MascotaFeliz.App.Persistencia\\obj\\",
+      "projectPath": "C:\\Users\\Juank\\Desktop\\proyectoCiclo3\\mascotas\\mascotafeliz.app\\MascotaFeliz.App.Persistencia\\MascotaFeliz.App.Persistencia.csproj",
+      "packagesPath": "C:\\Users\\Juank\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Juank\\Desktop\\proyectoCiclo3\\mascotas\\mascotafeliz.app\\MascotaFeliz.App.Persistencia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Familia\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Juank\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
@@ -7286,8 +7286,8 @@
       "frameworks": {
         "netstandard2.1": {
           "projectReferences": {
-            "C:\\Mascotas\\MascotaFeliz.App\\MascotaFeliz.App.Dominio\\MascotaFeliz.App.Dominio.csproj": {
-              "projectPath": "C:\\Mascotas\\MascotaFeliz.App\\MascotaFeliz.App.Dominio\\MascotaFeliz.App.Dominio.csproj"
+            "C:\\Users\\Juank\\Desktop\\proyectoCiclo3\\mascotas\\mascotafeliz.app\\MascotaFeliz.App.Dominio\\MascotaFeliz.App.Dominio.csproj": {
+              "projectPath": "C:\\Users\\Juank\\Desktop\\proyectoCiclo3\\mascotas\\mascotafeliz.app\\MascotaFeliz.App.Dominio\\MascotaFeliz.App.Dominio.csproj"
             }
           }
         }
