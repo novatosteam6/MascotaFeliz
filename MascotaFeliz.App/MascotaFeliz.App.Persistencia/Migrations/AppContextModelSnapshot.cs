@@ -161,7 +161,7 @@ namespace MascotaFeliz.App.Persistencia.Migrations
                 {
                     b.HasBaseType("MascotaFeliz.App.Dominio.Persona");
 
-                    b.Property<string>("TarjetaProfecional")
+                    b.Property<string>("TarjetaProfesional")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("Veterinario");
