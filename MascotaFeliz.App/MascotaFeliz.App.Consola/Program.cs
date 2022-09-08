@@ -9,14 +9,18 @@ namespace MascotaFeliz.App.Consola
     {
         private static IRepositorioDueno _repoDueno = new RepositorioDueno(new Persistencia.AppContext());
         private static IRepositorioVeterinario _repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
+        private static IRepositorioMascota _repoMascota = new RepositorioMascota(new Persistencia.AppContext());
 
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Dueño!");
-
             AddDueno();
+
             Console.WriteLine("Hello Veterinario!");
             AddVeterinario();
+
+            Console.WriteLine("Hello Mascota!");
+            AddMascota();
         }
 
         private static void AddDueno()
@@ -45,6 +49,18 @@ namespace MascotaFeliz.App.Consola
                 TarjetaProfesional = "23432561"
             };
             _repoVeterinario.AddVeterinario(veterinario);
+        }
+
+         private static void AddMascota()
+        {
+            var mascota = new Mascota
+            {
+                Nombre = "Rufo",
+                Color = "Cafe",
+                Especie = "Canino",
+                Raza = "Bulldog",
+            };
+            _repoMascota.AddMascota(mascota);
         }
     }
 }
