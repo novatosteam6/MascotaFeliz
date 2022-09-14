@@ -1,0 +1,135 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListaDuenosModel
+@{
+}
+
+    
+
+        <div class="cont-botones">
+            <a class="btn" href="#modal-registrar">Registrar Dueño</a>
+            <a class="btn" href="#modal-consultar">Consultar Dueño</a>
+            <button class="btn btn-list">Enlistar Dueños</button>
+        </div>
+
+        <div id="modal-registrar" class="modal-form">
+            <div class="caja-modal mover-modal">
+                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
+
+                <h2>Registrar Dueño:</h2>
+                <form class="formulario">
+                    <label for="inRegCedulaDueno">Cedula Dueño:</label>
+                    <input type="text" id="inRegCedulaDueno">
+
+                    <label for="inRegNombresDueno">Nombres Dueño:</label>
+                    <input type="text" id="inRegNombresDueno">
+            
+                    <label for="inRegApellidosDueno">Apellidos Dueño:</label>
+                    <input type="text" id="inRegApellidosDueno">
+            
+                    <label for="inRegDireccionDueno">Dirección Dueño:</label>
+                    <input type="text" id="inRegDireccionDueno">
+            
+                    <label for="inRegTelefonoDueno">Telefono Dueño:</label>
+                    <input type="text" id="inRegTelefonoDueno">
+            
+                    <label for="inRegCorreoDueno">Correo Dueño:</label>
+                    <input type="text" id="inRegCorreoDueno">
+            
+                    <input type="submit" class="btn" value="Registrar">
+                </form>
+            </div>
+        </div>
+
+        <div id="modal-editar" class="modal-form">
+            <div class="caja-modal mover-modal">
+                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
+
+                <h2>Editar Dueño:</h2>
+                <form class="formulario">
+
+                    <label for="inEditCedulaDueno">Cedula Dueño:</label>
+                    <input type="text" id="inEditCedulaDueno">
+
+                    <label for="inEditNombresDueno">Nombres Dueño:</label>
+                    <input type="text" id="inEditNombresDueno">
+            
+                    <label for="inEditApellidosDueno">Apellidos Dueño:</label>
+                    <input type="text" id="inEditApellidosDueno">
+            
+                    <label for="inEditDireccionDueno">Dirección Dueño:</label>
+                    <input type="text" id="inEditDireccionDueno">
+            
+                    <label for="inEditTelefonoDueno">Telefono Dueño:</label>
+                    <input type="text" id="inEditTelefonoDueno">
+            
+                    <label for="inEditCorreoDueno">Correo Dueño:</label>
+                    <input type="text" id="inEditCorreoDueno">
+            
+                    <input type="submit" class="btn" value="Editar" >
+                </form>
+            </div>
+        </div>
+
+        <div id="modal-consultar" class="modal-form">
+            <div class="caja-modal mover-modal">
+                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
+
+                <h2>Consultar Dueño:</h2>
+                <form class="formulario"  action="./DetallesDuenos" method="get">
+                    <label for="inconsulIdDueno">Id Dueño:</label>
+                    <input type="text" id="inconsulIdDueno" name="duenoId">
+            
+                    <input type="submit" class="btn" value="Consultar">
+                </form>
+            </div>
+        </div>
+
+        <div id="modal-eliminar" class="modal-form">
+            <div class="caja-modal mover-modal">
+                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
+
+                <h2>Eliminar Dueño:</h2>
+                <p>Esta seguro de eliminar este Registro?</p>
+                <button class="btn btn-sip">Sip!</button>
+                <a class="btn btn-nope" href="#cerrar">Nope!</a>
+            </div>
+        </div>
+
+        <div class="cont-tabla">
+            <table class="tabla">
+                <tr>
+                    <th>Id</th>
+                    <th>Cedula</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Dirección</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+                @foreach (var dueno in Model.listaDuenos)
+                {
+                <tr>
+                    <td>@dueno.Id</td>
+                    <td>@dueno.Cedula</td>
+                    <td>@dueno.Nombres</td>
+                    <td>@dueno.Apellidos</td>
+                    <td>@dueno.Direccion</td>
+                    <td>@dueno.Telefono</td>
+                    <td>@dueno.Correo</td>
+                    <td>
+                        <a class="btn-a" href="#modal-editar">
+                            <img src="~/images/pencil-fill.png" alt="editar">
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn-a" href="#modal-eliminar">
+                            <img src="~/images/delete-bin-5-line.png" alt="eliminar">
+                    </td>
+                </tr>
+                    
+                }
+                            
+            </table>
+        </div>

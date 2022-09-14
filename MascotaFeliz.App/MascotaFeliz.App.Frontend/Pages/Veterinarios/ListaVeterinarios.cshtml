@@ -1,0 +1,135 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListaVeterinariosModel
+@{
+}
+
+ <div class="cont-botones">
+            <a class="btn" href="#modal-registrar">Registrar Veterinario</a>
+            <a class="btn" href="#modal-consultar">Consultar Veterinario</a>
+            <button class="btn btn-list">Enlistar Veterinarios</button>
+        </div>
+
+        <div id="modal-registrar" class="modal-form">
+            <div class="caja-modal mover-modal">
+                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
+
+                <h2>Registrar Veterinario:</h2>
+                <form class="formulario">
+
+                    <label for="inRegCedulaVeterinario">Cedula Veterinario:</label>
+                    <input type="text" id="inRegCedulaVeterinario">
+
+                    <label for="inRegNombresVeterinario">Nombres Veterinario:</label>
+                    <input type="text" id="inRegNombresVeterinario">
+            
+                    <label for="inRegApellidosVeterinario">Apellidos Veterinario:</label>
+                    <input type="text" id="inRegApellidosVeterinario">
+            
+                    <label for="inRegDireccionVeterinario">Dirección Veterinario:</label>
+                    <input type="text" id="inRegDireccionVeterinario">
+            
+                    <label for="inRegTelefonoVeterinario">Telefono Veterinario:</label>
+                    <input type="text" id="inRegTelefonoVeterinario">
+            
+                    <label for="inRegTerjetaVeterinario">Tarjeta Veterinario:</label>
+                    <input type="text" id="inRegTerjetaVeterinario">
+            
+                    <input type="submit" class="btn" value="Registrar">
+                </form>
+            </div>
+        </div>
+
+        <div id="modal-editar" class="modal-form">
+            <div class="caja-modal mover-modal">
+                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
+
+                <h2>Editar Veterinario:</h2>
+                <form class="formulario">
+
+                    <label for="inEditCedulaVeterinario">Cedula Veterinario:</label>
+                    <input type="text" id="inEditCedulaVeterinario">
+
+                    <label for="inEditNombresVeterinario">Nombres Veterinario:</label>
+                    <input type="text" id="inEditNombresVeterinario">
+            
+                    <label for="inEditApellidosVeterinario">Apellidos Veterinario:</label>
+                    <input type="text" id="inEditApellidosVeterinario">
+            
+                    <label for="inEditDireccionVeterinario">Dirección Veterinario:</label>
+                    <input type="text" id="inEditDireccionVeterinario">
+            
+                    <label for="inEditTelefonoVeterinario">Telefono Veterinario:</label>
+                    <input type="text" id="inEditTelefonoVeterinario">
+            
+                    <label for="inEditTerjetaVeterinario">Tarjeta Veterinario:</label>
+                    <input type="text" id="inEditTerjetaVeterinario">
+            
+                    <input type="submit" class="btn" value="Editar">
+                </form>
+            </div>
+        </div>
+
+        <div id="modal-consultar" class="modal-form">
+            <div class="caja-modal mover-modal">
+                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
+
+                <h2>Consultar Veterinario:</h2>
+                <form class="formulario"  action="./DetallesVeterinarios" method="get">
+                    <label for="inconsulIdVeterinario">Id Veterinario:</label>
+                    <input type="text" id="inconsulIdVeterinario" name="veterinarioId">
+            
+                    <input type="submit" class="btn" value="Consultar">
+                </form>
+            </div>
+        </div>
+
+        <div id="modal-eliminar" class="modal-form">
+            <div class="caja-modal mover-modal">
+                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
+
+                <h2>Eliminar Veterinario:</h2>
+                <p>Esta seguro de eliminar este Registro?</p>
+                <button class="btn btn-sip">Sip!</button>
+                <a class="btn btn-nope" href="#cerrar">Nope!</a>
+            </div>
+        </div>
+
+        <div class="cont-tabla">
+            <table class="tabla">
+                <tr>
+                    <th>Id</th>
+                    <th>Cedula</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Dirección</th>
+                    <th>Telefono</th>
+                    <th>Tarjeta profesional</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+                @foreach (var veterinario in Model.listaVeterinarios)
+                {
+                    <tr>
+                    <td>@veterinario.Id</td>
+                    <td>@veterinario.Cedula</td>
+                    <td>@veterinario.Nombres</td>
+                    <td>@veterinario.Apellidos</td>
+                    <td>@veterinario.Direccion</td>
+                    <td>@veterinario.Telefono</td>
+                    <td>@veterinario.TarjetaProfesional</td>
+                    <td>
+                        <a class="btn-a" href="#modal-editar">
+                            <img src="~/images/pencil-fill.png" alt="editar">
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn-a" href="#modal-eliminar">
+                            <img src="~/images/delete-bin-5-line.png" alt="eliminar">
+                    </td>
+                </tr>
+
+                }
+                
+               
+            </table>
+        </div>
