@@ -40,35 +40,7 @@
             </div>
         </div>
 
-        <div id="modal-editar" class="modal-form">
-            <div class="caja-modal mover-modal">
-                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
-
-                <h2>Editar Dueño:</h2>
-                <form class="formulario">
-
-                    <label for="inEditCedulaDueno">Cedula Dueño:</label>
-                    <input type="text" id="inEditCedulaDueno">
-
-                    <label for="inEditNombresDueno">Nombres Dueño:</label>
-                    <input type="text" id="inEditNombresDueno">
-            
-                    <label for="inEditApellidosDueno">Apellidos Dueño:</label>
-                    <input type="text" id="inEditApellidosDueno">
-            
-                    <label for="inEditDireccionDueno">Dirección Dueño:</label>
-                    <input type="text" id="inEditDireccionDueno">
-            
-                    <label for="inEditTelefonoDueno">Telefono Dueño:</label>
-                    <input type="text" id="inEditTelefonoDueno">
-            
-                    <label for="inEditCorreoDueno">Correo Dueño:</label>
-                    <input type="text" id="inEditCorreoDueno">
-            
-                    <input type="submit" class="btn" value="Editar" >
-                </form>
-            </div>
-        </div>
+        
 
         <div id="modal-consultar" class="modal-form">
             <div class="caja-modal mover-modal">
@@ -119,7 +91,7 @@
                     <td>@dueno.Telefono</td>
                     <td>@dueno.Correo</td>
                     <td>
-                        <a class="btn-a" href="#modal-editar">
+                        <a class="btn-a" asp-page="./EditarDuenos" asp-route-duenoId="@dueno.Id">
                             <img src="~/images/pencil-fill.png" alt="editar">
                         </a>
                     </td>
