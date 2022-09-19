@@ -7,30 +7,34 @@
 
 <h2>Editar Dueño:</h2>
 
-<form method="post" class="formulario">
+<form method="post" style="width: 20px;">
     
 
         <input type="hidden" asp-for="dueno.Id">
 
         <label asp-for="dueno.Cedula"></label>
         <input asp-for="dueno.Cedula">
+        <br>
 
         <label asp-for="dueno.Nombres"></label>
         <input asp-for="dueno.Nombres">
-                
+        <br>        
         <label asp-for="dueno.Apellidos"></label>
         <input asp-for="dueno.Apellidos">
-                
+         <br>       
         <label asp-for="dueno.Direccion"></label>
         <input asp-for="dueno.Direccion">
-                
+        <br>        
         <label asp-for="dueno.Telefono"></label>
         <input asp-for="dueno.Telefono">
-                
+        <br>        
         <label asp-for="dueno.Correo"></label>
         <input asp-for="dueno.Correo">
-                
+        <br>        
         <input type="submit" class="btn" value="Editar" >
  
 </form>
+<br>
+<br>
+<a asp-area="" asp-page="/Duenos/ListaDuenos">Volver A Lista Dueños</a>
 

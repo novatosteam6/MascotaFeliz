@@ -11,11 +11,23 @@ namespace MascotaFeliz.App.Frontend.Pages
 {
     public class ListaVeterinariosModel : PageModel
     {
-        private static IRepositorioVeterinario _repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
+        private readonly IRepositorioVeterinario _repoVeterinario; 
         public IEnumerable<Veterinario> listaVeterinarios {get;set;}
-        public void OnGet()
+
+        public ListaVeterinariosModel()
         {
+            this._repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
+        }
+        
+        public IActionResult OnGet(int? veterinarioId)
+        {
+            if (veterinarioId.HasValue)
+            {
+                _repoVeterinario.DeleteVeterinario(veterinarioId.Value);
+            }
+
             listaVeterinarios = _repoVeterinario.GetAllVeterinarios();
+            return Page();
         }
     }
 }

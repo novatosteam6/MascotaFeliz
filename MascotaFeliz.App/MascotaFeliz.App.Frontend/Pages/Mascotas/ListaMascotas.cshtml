@@ -1,0 +1,71 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListaMascotasModel
+@{
+}
+
+        <div class="cont-botones">
+            <a class="btn" asp-page="./CrearMascotas">Registrar Mascota</a>
+            <a class="btn btn-list" href="#modal-consultar">Consultar Mascota</a>            
+        </div>
+
+        <div id="modal-consultar" class="modal-form">
+            <div class="caja-modal mover-modal">
+                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
+
+                <h2>Consultar Mascota:</h2>
+                <form class="formulario"  action="./DetallesMascotas" method="get">
+                    <label for="inconsulIdMascota">Id Mascota:</label>
+                    <input type="text" id="inconsulIdMascota" name="mascotaId">
+            
+                    <input type="submit" class="btn" value="Consultar">
+                </form>
+            </div>
+        </div>
+
+        <div id="modal-eliminar" class="modal-form">
+            <div class="caja-modal mover-modal">
+                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
+
+                <h2>Eliminar Mascota:</h2>
+                <p>Esta seguro de eliminar este Registro?</p>
+                <button class="btn btn-sip">Sip!</button>
+                <a class="btn btn-nope" href="#cerrar">Nope!</a>
+            </div>
+        </div>
+
+        <div class="cont-tabla">
+            <table class="tabla">
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Color</th>
+                    <th>Especie</th>
+                    <th>Raza</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+                @foreach (var mascota in Model.listaMascotas)
+                {
+                    <tr>
+                    <td>@mascota.Id</td>
+                    <td>@mascota.Nombre</td>
+                    <td>@mascota.Color</td>
+                    <td>@mascota.Especie</td>
+                    <td>@mascota.Raza</td>
+                    <td>
+                        <a class="btn-a" asp-page="./EditarMascotas" asp-route-mascotaId="@mascota.Id">
+                            <img src="~/images/pencil-fill.png" alt="editar">
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn-a" asp-page="./ListaMascotas" asp-route-mascotaId="@mascota.Id">
+                            <img src="~/images/delete-bin-5-line.png" alt="eliminar">
+                        </a>    
+                    </td>
+                </tr>
+
+                }
+                
+               
+            </table>
+        </div>

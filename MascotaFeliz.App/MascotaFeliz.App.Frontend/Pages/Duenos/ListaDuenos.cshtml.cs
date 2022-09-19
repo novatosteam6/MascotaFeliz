@@ -19,10 +19,16 @@ namespace MascotaFeliz.App.Frontend.Pages
             this._repoDueno = new RepositorioDueno(new Persistencia.AppContext());
         }
          
-         
-        public void OnGet()
+
+        public IActionResult OnGet(int? duenoId)
         {
+            if (duenoId.HasValue)
+            {
+                _repoDueno.DeleteDueno(duenoId.Value);
+            }
+
             listaDuenos = _repoDueno.GetAllDuenos();
+            return Page();
         }
     }
 }

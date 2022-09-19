@@ -1,0 +1,32 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.CrearMascotasModel
+@{
+}
+
+<h2>Crear Mascota:</h2>
+
+<form method="post" style="width: 20px;">
+    
+
+        <input type="hidden" asp-for="mascota.Id">
+
+        <label asp-for="mascota.Nombre"></label>
+        <input asp-for="mascota.Nombre">
+        <br>
+
+        <label asp-for="mascota.Color"></label>
+        <input asp-for="mascota.Color">
+        <br>        
+        <label asp-for="mascota.Especie"></label>
+        <input asp-for="mascota.Especie">
+         <br>       
+        <label asp-for="mascota.Raza"></label>
+        <input asp-for="mascota.Raza">
+        <br>        
+        <input type="submit" class="btn" value="Crear" >
+ 
+</form>
+<br>
+<br>
+<a asp-area="" asp-page="/Mascotas/ListaMascotas">Volver A Lista Mascotas</a>
+

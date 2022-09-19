@@ -3,43 +3,10 @@
 @{
 }
 
-    
-
         <div class="cont-botones">
-            <a class="btn" href="#modal-registrar">Registrar Dueño</a>
-            <a class="btn" href="#modal-consultar">Consultar Dueño</a>
-            <button class="btn btn-list">Enlistar Dueños</button>
+            <a class="btn" asp-page="./CrearDueno">Registrar Dueño</a>
+            <a class="btn btn-list" href="#modal-consultar">Consultar Dueño</a>           
         </div>
-
-        <div id="modal-registrar" class="modal-form">
-            <div class="caja-modal mover-modal">
-                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
-
-                <h2>Registrar Dueño:</h2>
-                <form class="formulario">
-                    <label for="inRegCedulaDueno">Cedula Dueño:</label>
-                    <input type="text" id="inRegCedulaDueno">
-
-                    <label for="inRegNombresDueno">Nombres Dueño:</label>
-                    <input type="text" id="inRegNombresDueno">
-            
-                    <label for="inRegApellidosDueno">Apellidos Dueño:</label>
-                    <input type="text" id="inRegApellidosDueno">
-            
-                    <label for="inRegDireccionDueno">Dirección Dueño:</label>
-                    <input type="text" id="inRegDireccionDueno">
-            
-                    <label for="inRegTelefonoDueno">Telefono Dueño:</label>
-                    <input type="text" id="inRegTelefonoDueno">
-            
-                    <label for="inRegCorreoDueno">Correo Dueño:</label>
-                    <input type="text" id="inRegCorreoDueno">
-            
-                    <input type="submit" class="btn" value="Registrar">
-                </form>
-            </div>
-        </div>
-
         
 
         <div id="modal-consultar" class="modal-form">
@@ -62,8 +29,11 @@
 
                 <h2>Eliminar Dueño:</h2>
                 <p>Esta seguro de eliminar este Registro?</p>
-                <button class="btn btn-sip">Sip!</button>
-                <a class="btn btn-nope" href="#cerrar">Nope!</a>
+                <form class="formulario"  action="./DetallesDuenos" method="get">
+                    <button class="btn btn-sip" name=>Sip!</button>
+                    <a class="btn btn-nope" href="#cerrar">Nope!</a>
+                </form>
+                
             </div>
         </div>
 
@@ -96,8 +66,9 @@
                         </a>
                     </td>
                     <td>
-                        <a class="btn-a" href="#modal-eliminar">
+                        <a class="btn-a" asp-page="./ListaDuenos" asp-route-duenoId="@dueno.Id">
                             <img src="~/images/delete-bin-5-line.png" alt="eliminar">
+                        </a>    
                     </td>
                 </tr>
                     
