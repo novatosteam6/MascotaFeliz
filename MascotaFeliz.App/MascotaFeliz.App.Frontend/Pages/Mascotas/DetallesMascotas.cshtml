@@ -1,0 +1,34 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.DetallesMascotasModel
+@{
+}
+
+
+<h1>Datos De la mascota consultada</h1>
+
+<div>
+    id: @Model.mascota.Id
+</div>
+
+<div>
+    cedula: @Model.mascota.Nombre
+</div>
+
+<div>
+    Nombre: @Model.mascota.Color
+</div>
+
+<div>
+    Apellido: @Model.mascota.Especie
+</div>
+
+<div>
+    Direccion: @Model.mascota.Raza
+</div>
+
+<br>
+<br>
+<br>
+<div>
+<a asp-area="" asp-page="/Mascotas/ListaMascotas">Volver A Lista Mascotas</a>
+</div>

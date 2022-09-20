@@ -1,0 +1,78 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListaDuenosModel
+@{
+}
+
+        <div class="cont-botones">
+            <a class="btn" asp-page="./CrearDueno">Registrar Dueño</a>
+            <a class="btn btn-list" href="#modal-consultar">Consultar Dueño</a>           
+        </div>
+        
+
+        <div id="modal-consultar" class="modal-form">
+            <div class="caja-modal mover-modal">
+                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
+
+                <h2>Consultar Dueño:</h2>
+                <form class="formulario"  action="./DetallesDuenos" method="get">
+                    <label for="inconsulIdDueno">Id Dueño:</label>
+                    <input type="text" id="inconsulIdDueno" name="duenoId">
+            
+                    <input type="submit" class="btn" value="Consultar">
+                </form>
+            </div>
+        </div>
+
+        <div id="modal-eliminar" class="modal-form">
+            <div class="caja-modal mover-modal">
+                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
+
+                <h2>Eliminar Dueño:</h2>
+                <p>Esta seguro de eliminar este Registro?</p>
+                <form class="formulario"  action="./DetallesDuenos" method="get">
+                    <button class="btn btn-sip" name=>Sip!</button>
+                    <a class="btn btn-nope" href="#cerrar">Nope!</a>
+                </form>
+                
+            </div>
+        </div>
+
+        <div class="cont-tabla">
+            <table class="tabla">
+                <tr>
+                    <th>Id</th>
+                    <th>Cedula</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Dirección</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+                @foreach (var dueno in Model.listaDuenos)
+                {
+                <tr>
+                    <td>@dueno.Id</td>
+                    <td>@dueno.Cedula</td>
+                    <td>@dueno.Nombres</td>
+                    <td>@dueno.Apellidos</td>
+                    <td>@dueno.Direccion</td>
+                    <td>@dueno.Telefono</td>
+                    <td>@dueno.Correo</td>
+                    <td>
+                        <a class="btn-a" asp-page="./EditarDuenos" asp-route-duenoId="@dueno.Id">
+                            <img src="~/images/pencil-fill.png" alt="editar">
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn-a" asp-page="./ListaDuenos" asp-route-duenoId="@dueno.Id">
+                            <img src="~/images/delete-bin-5-line.png" alt="eliminar">
+                        </a>    
+                    </td>
+                </tr>
+                    
+                }
+                            
+            </table>
+        </div>

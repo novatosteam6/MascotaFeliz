@@ -1,0 +1,32 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.CrearDuenoModel
+@{
+}
+
+<h2>Crear Dueño:</h2>
+
+<form method="post" style="width: 20px;">
+    
+        <label asp-for="dueno.Cedula"></label>
+        <input asp-for="dueno.Cedula">
+        <br>
+
+        <label asp-for="dueno.Nombres"></label>
+        <input asp-for="dueno.Nombres">
+        <br>        
+        <label asp-for="dueno.Apellidos"></label>
+        <input asp-for="dueno.Apellidos">
+         <br>       
+        <label asp-for="dueno.Direccion"></label>
+        <input asp-for="dueno.Direccion">
+        <br>        
+        <label asp-for="dueno.Telefono"></label>
+        <input asp-for="dueno.Telefono">
+        <br>        
+        <label asp-for="dueno.Correo"></label>
+        <input asp-for="dueno.Correo">
+        <br>        
+        <input type="submit" class="btn" value="Crear" >
+</form>
+
+<a asp-page="./ListaDuenos" class="btn">Volver A lista Duenos</a>

@@ -39,17 +39,13 @@ namespace MascotaFeliz.App.Persistencia
             _appContext.SaveChanges();
         }
 
-       public IEnumerable<Dueno> GetAllDuenos()
-        {
-            return GetAllDuenos_();
-        }
 
         public IEnumerable<Dueno> GetDuenosPorFiltro(string filtro)
         {
-            var duenos = GetAllDuenos(); // Obtiene todos los saludos
-            if (duenos != null)  //Si se tienen saludos
+            var duenos = GetAllDuenos(); 
+            if (duenos != null)  
             {
-                if (!String.IsNullOrEmpty(filtro)) // Si el filtro tiene algun valor
+                if (!String.IsNullOrEmpty(filtro)) 
                 {
                     duenos = duenos.Where(s => s.Nombres.Contains(filtro));
                 }
@@ -57,7 +53,7 @@ namespace MascotaFeliz.App.Persistencia
             return duenos;
         }
 
-        public IEnumerable<Dueno> GetAllDuenos_()
+        public IEnumerable<Dueno> GetAllDuenos()
         {
             return _appContext.Duenos;
         }

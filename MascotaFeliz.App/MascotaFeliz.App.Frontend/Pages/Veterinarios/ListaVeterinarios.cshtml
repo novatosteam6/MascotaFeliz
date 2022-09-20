@@ -1,0 +1,75 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListaVeterinariosModel
+@{
+}
+
+        <div class="cont-botones">
+            <a class="btn" asp-page="./CrearVeterinarios">Registrar Veterinario</a>
+            <a class="btn btn-list" href="#modal-consultar">Consultar Veterinario</a>            
+        </div>
+
+        <div id="modal-consultar" class="modal-form">
+            <div class="caja-modal mover-modal">
+                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
+
+                <h2>Consultar Veterinario:</h2>
+                <form class="formulario"  action="./DetallesVeterinarios" method="get">
+                    <label for="inconsulIdVeterinario">Id Veterinario:</label>
+                    <input type="text" id="inconsulIdVeterinario" name="veterinarioId">
+            
+                    <input type="submit" class="btn" value="Consultar">
+                </form>
+            </div>
+        </div>
+
+        <div id="modal-eliminar" class="modal-form">
+            <div class="caja-modal mover-modal">
+                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
+
+                <h2>Eliminar Veterinario:</h2>
+                <p>Esta seguro de eliminar este Registro?</p>
+                <button class="btn btn-sip">Sip!</button>
+                <a class="btn btn-nope" href="#cerrar">Nope!</a>
+            </div>
+        </div>
+
+        <div class="cont-tabla">
+            <table class="tabla">
+                <tr>
+                    <th>Id</th>
+                    <th>Cedula</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Dirección</th>
+                    <th>Telefono</th>
+                    <th>Tarjeta profesional</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+                @foreach (var veterinario in Model.listaVeterinarios)
+                {
+                    <tr>
+                    <td>@veterinario.Id</td>
+                    <td>@veterinario.Cedula</td>
+                    <td>@veterinario.Nombres</td>
+                    <td>@veterinario.Apellidos</td>
+                    <td>@veterinario.Direccion</td>
+                    <td>@veterinario.Telefono</td>
+                    <td>@veterinario.TarjetaProfesional</td>
+                    <td>
+                        <a class="btn-a" asp-page="./EditarVeterinarios" asp-route-veterinarioId="@veterinario.Id">
+                            <img src="~/images/pencil-fill.png" alt="editar">
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn-a" asp-page="./ListaVeterinarios" asp-route-veterinarioId="@veterinario.Id">
+                            <img src="~/images/delete-bin-5-line.png" alt="eliminar">
+                        </a>    
+                    </td>
+                </tr>
+
+                }
+                
+               
+            </table>
+        </div>
