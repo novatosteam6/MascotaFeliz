@@ -12,24 +12,36 @@ namespace MascotaFeliz.App.Frontend.Pages
     public class CrearVisitasModel : PageModel
     {
         private readonly IRepositorioVisitaPyP _repoVisita;
+        private readonly IRepositorioMascota _repoMascota;
+        private readonly IRepositorioHistoria _repoHistoria;
         [BindProperty]
         
         public VisitaPyP visitaPyP { get; set; }
+        public Mascota mascota { get; set; }
+        public Historia historia { get; set; }
 
         public CrearVisitasModel()
         {
             this._repoVisita = new RepositorioVisitaPyP(new Persistencia.AppContext());
+            this._repoMascota = new RepositorioMascota(new Persistencia.AppContext());
+            this._repoHistoria = new RepositorioHistoria(new Persistencia.AppContext());
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(int mascotaId)
         {
-            visitaPyP = new VisitaPyP();
-            visitaPyP.FechaVisita = new DateTime();
+           mascota = _repoMascota.GetMascota(mascotaId);
+           historia = _repoHistoria.GetHistoria(mascota.Historia.Id);
+           visitaPyP = new VisitaPyP();
+           DateTime date1 = DateTime.Now;
+           visitaPyP.FechaVisita = date1;
+           
+
+
             return Page();
         }
 
 
-        public IActionResult OnPost()
+        public IActionResult OnPost(VisitaPyP visitaPyP, int historiaId, int veterinarioId, int mascotaId)
         {
             if (!ModelState.IsValid)
             {
@@ -38,10 +50,15 @@ namespace MascotaFeliz.App.Frontend.Pages
             
             if (visitaPyP != null)
             {
-                _repoVisita.AddVisitaPyP(visitaPyP);
+                visitaPyP.IdVeterinario = veterinarioId;
+                historia = _repoHistoria.GetHistoria(historiaId);
+
+                historia.VisitasPyP.Add(visitaPyP);
+                _repoHistoria.UpdateHistoria(historia);
+
             }
             
-            return Page();
+            return RedirectToPage("/Mascotas/DetallesMascotas", new { mascotaId = mascotaId});
         }
     }
 }

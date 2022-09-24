@@ -4,14 +4,26 @@
 }
 
 
-<h1>Datos De la mascota consultada</h1>
+<h1>Detallado De la visita</h1>
 
 <div>
-    id: @Model.visitaPyP.Id
+    Numero de Historia: @Model.historia.Id
 </div>
 
 <div>
-    Fecha: @Model.visitaPyP.FechaVisita
+    id de la visita: @Model.visitaPyP.Id
+</div>
+
+<div>
+    Fecha De Visita: @Model.visitaPyP.FechaVisita
+</div>
+
+<div>
+    Nombre mascota: @Model.mascota.Nombre
+</div>
+
+<div>
+    Especie: @Model.mascota.Especie
 </div>
 
 <div>
@@ -42,5 +54,5 @@
 <br>
 <br>
 <div>
-<a asp-area="" asp-page="/Visitas/ListaVisitas">Volver A Lista Visitas</a>
+<a asp-area="" asp-page="/Visitas/ListaVisitas" asp-route-historiaId="@Model.historia.Id" asp-route-mascotaId="@Model.mascota.Id">Volver A Lista Visitas</a>
 </div>

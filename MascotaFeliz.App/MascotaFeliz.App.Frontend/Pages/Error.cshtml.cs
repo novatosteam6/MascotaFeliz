@@ -6,26 +6,35 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using MascotaFeliz.App.Dominio;
+using MascotaFeliz.App.Persistencia;
 
 namespace MascotaFeliz.App.Frontend.Pages
 {
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public class ErrorModel : PageModel
     {
-        public string RequestId { get; set; }
 
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+        private readonly IRepositorioMascota _repoMascota;
+        private readonly IRepositorioHistoria _repoHistoria;
 
-        private readonly ILogger<ErrorModel> _logger;
+        public Historia historia {get;set;}
+        public Mascota mascota {get;set;}
 
-        public ErrorModel(ILogger<ErrorModel> logger)
+        public ErrorModel()
         {
-            _logger = logger;
+        this._repoHistoria = new RepositorioHistoria(new Persistencia.AppContext());
+        this._repoMascota = new RepositorioMascota(new Persistencia.AppContext());
         }
 
-        public void OnGet()
+    
+
+        public IActionResult OnGet(int mascotaId, int historiaId)
         {
-            RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
+            mascota = _repoMascota.GetMascota(mascotaId);
+            historia = _repoHistoria.GetHistoria(historiaId);
+
+            return Page();
         }
     }
 }

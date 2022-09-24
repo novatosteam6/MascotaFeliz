@@ -24,6 +24,23 @@
         <label asp-for="mascota.Raza"></label>
         <input asp-for="mascota.Raza">
         <br>        
+        <label for="dueno">Dueño</label>
+        <select id="dueno" asp-for="mascota.Dueno.Id" name = "duenoId">
+            <option value="0">Seleccione un Dueño</option>
+            @foreach (var dueno in Model.listaDuenos)
+            {
+                <option value="@dueno.Id">@dueno.Nombres @dueno.Apellidos</option>
+            }
+        </select>
+        <label for="veterinario">Veterinario</label>
+        <select id="veterinario" asp-for="mascota.Veterinario.Id" name = "veterinarioId">
+            <option value="0">Seleccione un Veterinario</option>
+            @foreach (var veterinario in Model.listaVeterinarios)
+            {
+                <option value="@veterinario.Id">@veterinario.Nombres @veterinario.Apellidos</option>
+            }
+        </select>
+        <br>        
         <input type="submit" class="btn" value="Editar" >
  
 </form>

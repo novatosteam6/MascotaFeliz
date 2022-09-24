@@ -11,6 +11,26 @@
 
         <input type="hidden" asp-for="visitaPyP.Id">
 
+        <input type="hidden" asp-for="mascota.Id" name = "mascotaId">
+
+        <input type="hidden" asp-for="mascota.Veterinario.Id" name = "veterinarioId">
+
+        <label asp-for="mascota.Nombre">Nombre Mascota</label>
+        <input asp-for="mascota.Nombre" readonly>
+        <br>
+
+        <label asp-for="historia.Id">Numero de historia</label>
+        <input asp-for="historia.Id" name = "historiaId" readonly>
+        <br>
+
+        <label asp-for="mascota.Veterinario.Nombres">Veterinario Asigando</label>
+        <input asp-for="mascota.Veterinario.Nombres" readonly>
+        <br>
+
+        <label asp-for="mascota.Veterinario.Apellidos">Veterinario Asigando</label>
+        <input asp-for="mascota.Veterinario.Apellidos" readonly>
+        <br>
+
         <label asp-for="visitaPyP.FechaVisita"></label>
         <input asp-for="visitaPyP.FechaVisita">
         <br>
@@ -38,5 +58,5 @@
 </form>
 <br>
 <br>
-<a asp-area="" asp-page="/Visitas/ListaVisitas">Volver A Lista Visitas</a>
+<a asp-area="" asp-page="/Mascotas/DetallesMacotas" asp-route-historiaId="@Model.mascota.Id">Volver A Detalles Mascota</a>
 

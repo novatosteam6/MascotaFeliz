@@ -39,14 +39,14 @@ namespace MascotaFeliz.App.Persistencia
             _appContext.SaveChanges();
         }
 
-        public IEnumerable<VisitaPyP> GetVisitasPyPPorFiltro(string filtro)
+        public IEnumerable<VisitaPyP> GetVisitasPyPPorFiltro(int filtro)
         {
             var visitasPyP = GetAllVisitasPyP(); // Obtiene todos los saludos
             if (visitasPyP != null)  //Si se tienen saludos
             {
-                if (!String.IsNullOrEmpty(filtro)) // Si el filtro tiene algun valor
+                if (filtro >= 0 ) // Si el filtro tiene algun valor
                 {
-                    visitasPyP = visitasPyP.Where(s => s.FechaVisita.Equals(filtro));
+                    visitasPyP = visitasPyP.Where(s => s.Id.Equals(filtro));
                 }
             }
             return visitasPyP;
@@ -54,7 +54,7 @@ namespace MascotaFeliz.App.Persistencia
 
         public IEnumerable<VisitaPyP> GetAllVisitasPyP()
         {
-            return _appContext.VisitasPyP;
+            return _appContext.VisitasPyP.Include("Historia");
         }
 
         public VisitaPyP GetVisitaPyP(int idVisitaPyP)

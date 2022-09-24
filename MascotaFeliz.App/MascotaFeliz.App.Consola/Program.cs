@@ -22,17 +22,22 @@ namespace MascotaFeliz.App.Consola
            // Console.WriteLine("Hello Mascota!");
            // AddMascota();
 
-            Console.WriteLine("Dueño con id 3!");
-            BuscarDueno(3);
+            //Console.WriteLine("Dueño con id 3!");
+           // BuscarDueno(3);
 
-            Console.WriteLine("Todos los dueños!");
-            ListarDuenos();
+            //Console.WriteLine("Todos los dueños!");
+            //ListarDuenos();
 
-            Console.WriteLine("Mascota con id 2!");
-            BuscarMascota(2);
+            //Console.WriteLine("Mascota con id 2!");
+            //BuscarMascota(3);
 
-            Console.WriteLine("Todas las mascotas!");
-            ListarMascotas();
+            //Console.WriteLine("Todas las mascotas!");
+            //ListarMascotas();
+
+           // AsignarVeterinario(3, 10);
+           // AsignarDueno(3, 7);
+
+
         }
 
 
@@ -113,6 +118,20 @@ namespace MascotaFeliz.App.Consola
             {
                 Console.WriteLine(m.Nombre + " " + m.Color + " " + m.Especie + " " + m.Raza);
             }
+        }
+
+        private static void AsignarVeterinario(int idMascota, int idVeterinario)
+        {
+            var veterinario = _repoMascota.AsignarVeterinario(idMascota, idVeterinario);
+            Console.WriteLine(veterinario.Nombres);
+        
+        }
+
+        private static void AsignarDueno(int idMascota, int idDueno)
+        {
+            var dueno = _repoMascota.AsignarDueno(idMascota, idDueno);
+            Console.WriteLine(dueno.Nombres);
+        
         }
 
     }
