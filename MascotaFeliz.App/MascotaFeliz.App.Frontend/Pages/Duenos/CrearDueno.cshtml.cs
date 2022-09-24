@@ -39,7 +39,7 @@ namespace MascotaFeliz.App.Frontend.Pages
                 _repoDueno.AddDueno(dueno);
             }
             
-            return Page();
+            return RedirectToPage("/Duenos/ListaDuenos");
         }
     }
 }

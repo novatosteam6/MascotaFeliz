@@ -46,7 +46,7 @@ namespace MascotaFeliz.App.Frontend.Pages
             }
             
 
-            return Page();
+            return RedirectToPage("/Veterinarios/ListaVeterinarios");
         }
     }
 }

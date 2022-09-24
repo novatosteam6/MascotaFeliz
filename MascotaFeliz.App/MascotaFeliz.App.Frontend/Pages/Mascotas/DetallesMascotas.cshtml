@@ -3,27 +3,38 @@
 @{
 }
 
-
-<h1>Datos De la mascota consultada</h1>
+<H3>Detalles de la mascota consultada </H3>
 
 <div>
-    id: @Model.mascota.Id
+    id mascota: @Model.mascota.Id
 </div>
 
 <div>
-    cedula: @Model.mascota.Nombre
+    Historia numero: @Model.mascota.Historia.Id
 </div>
 
 <div>
-    Nombre: @Model.mascota.Color
+    Nombre: @Model.mascota.Nombre
 </div>
 
 <div>
-    Apellido: @Model.mascota.Especie
+    Color: @Model.mascota.Color
 </div>
 
 <div>
-    Direccion: @Model.mascota.Raza
+    Especie: @Model.mascota.Especie
+</div>
+
+<div>
+    Raza: @Model.mascota.Raza
+</div>
+
+<div>
+    Dueño: @Model.mascota.Dueno.Nombres @Model.mascota.Dueno.Apellidos
+</div>
+
+<div>
+    Veterinario: @Model.mascota.Veterinario.Nombres @Model.mascota.Veterinario.Apellidos
 </div>
 
 <br>
@@ -31,4 +42,12 @@
 <br>
 <div>
 <a asp-area="" asp-page="/Mascotas/ListaMascotas">Volver A Lista Mascotas</a>
+</div>
+<br>
+<div>
+<a asp-area="" asp-page="/Visitas/CrearVisitas" asp-route-mascotaId="@Model.mascota.Id">Registrar nueva visita</a>
+</div>
+<br>
+<div>
+<a asp-area="" asp-page="/Visitas/ListaVisitas" asp-route-mascotaId="@Model.mascota.Id" asp-route-historiaId="@Model.mascota.Historia.Id">Historia</a>
 </div>

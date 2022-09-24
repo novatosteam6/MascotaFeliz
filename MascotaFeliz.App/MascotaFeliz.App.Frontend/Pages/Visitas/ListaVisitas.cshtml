@@ -4,74 +4,47 @@
 }
 
         <div class="cont-botones">
-            <a class="btn" asp-page="./CrearVisitas">Registrar Visita</a>
-            <a class="btn btn-list" href="#modal-consultar">Consultar Visita</a>            
-        </div>
-
-        <div id="modal-consultar" class="modal-form">
-            <div class="caja-modal mover-modal">
-                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
-
-                <h2>Consultar Visita:</h2>
-                <form class="formulario"  action="./DetallesVisita" method="get">
-                    <label for="inconsulIdVisita">Id Visita:</label>
-                    <input type="text" id="inconsulIdVisita" name="visitaId">
-            
-                    <input type="submit" class="btn" value="Consultar">
-                </form>
-            </div>
-        </div>
-
-        <div id="modal-eliminar" class="modal-form">
-            <div class="caja-modal mover-modal">
-                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
-
-                <h2>Eliminar Visita:</h2>
-                <p>Esta seguro de eliminar este Registro?</p>
-                <button class="btn btn-sip">Sip!</button>
-                <a class="btn btn-nope" href="#cerrar">Nope!</a>
-            </div>
+           <div>
+                 Numero de Historia: @Model.historia.Id
+           </div>   
+           <div>
+                 Fecha De Apertura: @Model.historia.FechaInicial
+           </div>   
+           <div>
+                 Mascota: @Model.mascota.Nombre
+           </div>  
+           <div>
+                 Especie: @Model.mascota.Especie
+           </div> 
         </div>
 
         <div class="cont-tabla">
             <table class="tabla">
                 <tr>
-                    <th>Id</th>
                     <th>FechaVisita</th>
-                    <th>Temperatura</th>
-                    <th>Peso</th>
-                    <th>Frecuencia Respiratorioa</th>
-                    <th>Frecuencia Cardiaca</th>
-                    <th>Estado animo</th>
-                    <th>Recomendaciones</th>
-                    <th>Editar</th>
+                    <th>Detalles</th>
                     <th>Eliminar</th>
                 </tr>
+            
                 @foreach (var visita in Model.listaVisitas)
                 {
                     <tr>
-                    <td>@visita.Id</td>
                     <td>@visita.FechaVisita</td>
-                    <td>@visita.Temperatura</td>
-                    <td>@visita.Peso</td>
-                    <td>@visita.FrecuenciaRespiratoria</td>
-                    <td>@visita.FrecuenciaCardiaca</td>
-                    <td>@visita.EstadoAnimo</td>
-                    <td>@visita.Pecomendaciones</td>
                     <td>
-                        <a class="btn-a" asp-page="./EditarVisitas" asp-route-visitaId="@visita.Id">
-                            <img src="~/images/pencil-fill.png" alt="editar">
+                        <a class="btn-a" asp-page="./DetallesVisita" asp-route-visitaId="@visita.Id" asp-route-historiaId="@Model.historia.Id" asp-route-mascotaId="@Model.mascota.Id">
+                            <img src="~/images/detalle.png" style="width:30px ;" alt="detalles">
                         </a>
                     </td>
+
                     <td>
-                        <a class="btn-a" asp-page="./ListaVisitas" asp-route-visitaId="@visita.Id">
+                        <a class="btn-a" asp-page="./ListaVisitas" asp-route-visitaId="@visita.Id" asp-route-historiaId="@Model.historia.Id" asp-route-mascotaId="@Model.mascota.Id">
                             <img src="~/images/delete-bin-5-line.png" alt="eliminar">
                         </a>    
                     </td>
                 </tr>
-
                 }
-                
-               
             </table>
         </div>
+<div>
+<a asp-area="" asp-page="/Mascotas/DetallesMascotas" asp-route-mascotaId="@Model.mascota.Id">Volver A detalles mascota</a>
+</div>

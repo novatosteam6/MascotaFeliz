@@ -4,33 +4,7 @@
 }
 
         <div class="cont-botones">
-            <a class="btn" asp-page="./CrearVeterinarios">Registrar Veterinario</a>
-            <a class="btn btn-list" href="#modal-consultar">Consultar Veterinario</a>            
-        </div>
-
-        <div id="modal-consultar" class="modal-form">
-            <div class="caja-modal mover-modal">
-                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
-
-                <h2>Consultar Veterinario:</h2>
-                <form class="formulario"  action="./DetallesVeterinarios" method="get">
-                    <label for="inconsulIdVeterinario">Id Veterinario:</label>
-                    <input type="text" id="inconsulIdVeterinario" name="veterinarioId">
-            
-                    <input type="submit" class="btn" value="Consultar">
-                </form>
-            </div>
-        </div>
-
-        <div id="modal-eliminar" class="modal-form">
-            <div class="caja-modal mover-modal">
-                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
-
-                <h2>Eliminar Veterinario:</h2>
-                <p>Esta seguro de eliminar este Registro?</p>
-                <button class="btn btn-sip">Sip!</button>
-                <a class="btn btn-nope" href="#cerrar">Nope!</a>
-            </div>
+            <a class="btn" asp-page="./CrearVeterinarios">Registrar Veterinario</a>           
         </div>
 
         <div class="cont-tabla">
@@ -43,6 +17,7 @@
                     <th>Dirección</th>
                     <th>Telefono</th>
                     <th>Tarjeta profesional</th>
+                    <th>Detalles</th>
                     <th>Editar</th>
                     <th>Eliminar</th>
                 </tr>
@@ -56,6 +31,11 @@
                     <td>@veterinario.Direccion</td>
                     <td>@veterinario.Telefono</td>
                     <td>@veterinario.TarjetaProfesional</td>
+                    <td>
+                        <a class="btn-a" asp-page="./DetallesVeterinarios" asp-route-veterinarioId="@veterinario.Id">
+                            <img src="~/images/detalle.png" style="width:30px ;" alt="detalles">
+                        </a>
+                    </td>
                     <td>
                         <a class="btn-a" asp-page="./EditarVeterinarios" asp-route-veterinarioId="@veterinario.Id">
                             <img src="~/images/pencil-fill.png" alt="editar">

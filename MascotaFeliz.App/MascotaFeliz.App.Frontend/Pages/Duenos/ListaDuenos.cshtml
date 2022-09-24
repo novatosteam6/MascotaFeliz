@@ -4,36 +4,13 @@
 }
 
         <div class="cont-botones">
-            <a class="btn" asp-page="./CrearDueno">Registrar Dueño</a>
-            <a class="btn btn-list" href="#modal-consultar">Consultar Dueño</a>           
+            <a class="btn" asp-page="./CrearDueno">Registrar Dueño</a>         
         </div>
         
 
         <div id="modal-consultar" class="modal-form">
             <div class="caja-modal mover-modal">
                 <a href="#cerrar" title="cerrar" class="cerrar">X</a>
-
-                <h2>Consultar Dueño:</h2>
-                <form class="formulario"  action="./DetallesDuenos" method="get">
-                    <label for="inconsulIdDueno">Id Dueño:</label>
-                    <input type="text" id="inconsulIdDueno" name="duenoId">
-            
-                    <input type="submit" class="btn" value="Consultar">
-                </form>
-            </div>
-        </div>
-
-        <div id="modal-eliminar" class="modal-form">
-            <div class="caja-modal mover-modal">
-                <a href="#cerrar" title="cerrar" class="cerrar">X</a>
-
-                <h2>Eliminar Dueño:</h2>
-                <p>Esta seguro de eliminar este Registro?</p>
-                <form class="formulario"  action="./DetallesDuenos" method="get">
-                    <button class="btn btn-sip" name=>Sip!</button>
-                    <a class="btn btn-nope" href="#cerrar">Nope!</a>
-                </form>
-                
             </div>
         </div>
 
@@ -47,6 +24,7 @@
                     <th>Dirección</th>
                     <th>Telefono</th>
                     <th>Correo</th>
+                    <th>Detalles</th>
                     <th>Editar</th>
                     <th>Eliminar</th>
                 </tr>
@@ -60,6 +38,11 @@
                     <td>@dueno.Direccion</td>
                     <td>@dueno.Telefono</td>
                     <td>@dueno.Correo</td>
+                    <td>
+                        <a class="btn-a" asp-page="./DetallesDuenos" asp-route-duenoId="@dueno.Id">
+                            <img src="~/images/detalle.png" style="width:30px ;" alt="detalles">
+                        </a>
+                    </td>
                     <td>
                         <a class="btn-a" asp-page="./EditarDuenos" asp-route-duenoId="@dueno.Id">
                             <img src="~/images/pencil-fill.png" alt="editar">
