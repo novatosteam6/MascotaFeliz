@@ -1,0 +1,33 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+ul li {
+    list-style: none;
+}
+.nav li a {
+    background-color: rgba(72, 61, 139,0.9);
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-bottom: 2px solid rgba(255, 61, 139,0.9)
+}
+.nav > li {
+    float: left;
+}
+
+.nav ul li a:hover {
+    padding-left: 40px;
+    background-color: rgba(51, 102, 255, 0.4);
+    transition: .7s;
+}
+.nav li ul {
+    display: none;
+    position: absolute;
+    min-width: 125px;
+}
+.nav li:hover > ul{
+    display: block;
+}

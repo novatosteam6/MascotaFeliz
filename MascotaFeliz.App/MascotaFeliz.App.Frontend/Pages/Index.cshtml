@@ -2,48 +2,63 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
-}
-<section>
-        <div class="cont-diaps">
-            <div class="diaps">
+}<!DOCTYPE html>
+<html lang="es">
 
-                <input type="radio" name="radio-btn" id="radio1">
-                <input type="radio" name="radio-btn" id="radio2">
-                <input type="radio" name="radio-btn" id="radio3">
 
-                <div class="diap primer-diap">
-                    <img src="~/images/img1.jpg" alt="img1">
-                </div>
-
-                <div class="diap">
-                    <img src="~/images/img2.jpg" alt="img2">
-                </div>
-
-                <div class="diap">
-                    <img src="~/images/img3.jpg" alt="img3">
-                </div>
-
-                <div class="nav-color">
-                    <div class="btn-color-1"></div>
-                    <div class="btn-color-2"></div>
-                    <div class="btn-color-3"></div>
-                </div>
-
+<main>
+        <section id="banner">
+            <img src="img/5-apps-en-español-que-debe-tener-todo-dueño-de-mascotas.jpg" alt="banner pets">
+            <div class="container">
+                <h2>They are one more member of the family</h2>
+                <p>You think so?</p>
+                <a href="#">Read more</a>
             </div>
-            <div class="nav-diap">
-                <label for="radio1" class="diap-btn"></label>
-                <label for="radio2" class="diap-btn"></label>
-                <label for="radio3" class="diap-btn"></label>
+        </section>
+        <section id="wellcome">
+            <h2>Welcome to the club</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi, beatae voluptatum inventore
+                dicta, excepturi odit nulla, quas corporis aut eveniet. Suscipit aperiam deleniti aliquid rerum eligendi
+                illo assumenda nemo.</p>
+        </section>
+        <section id="blog">
+            <h3>The latest in our community</h3>
+            <div class="container">
+                <article>
+                    <img src="img/397244_mediana_LbizPreX.jpg" alt="">
+                    <h4>Animals need besides a home they need love</h4>
+                </article>
+                <article>
+                    <img src="img/tr%C3%ADo-de-mascotas-1-1.png" alt="">
+                    <h4>Choose your perfect pet</h4>
+                </article>
+                <article>
+                    <img src="img/6b6ca1cb57215edcd686445a2e3562e4.jpg" alt="">
+                    <h4>They need to run free and happy</h4>
+                </article>
             </div>
-        </div>
-    </section>
-    <main>
-        <div class="cont-info">
-            <img src="~/images/veterinarian-check-ing-puppy-s-health-2 (1).jpg" alt="img-info">
-            <div class="text">
-                <h2>Nuestro compromiso <span>es con las mascotas</span></h2>
-                <p>El equipo médico todos los días se prepara para brindar el mejor servicio a las mascotas que lo necesiten. Es fundamental en nuestra filosofía encontrar una respuesta a todos los que nos consultan por el bienestar, salud, higiene y nutrición de sus perros o gatos.</p>
+        </section>
+        <section id="info">
+            <h3>Many of our friends are looking for a home to adopt them</h3>
+            <div class="container">
+                <div class="info-pet">
+                    <img src="img/Feliz.jpg" alt="happy-pet">
+                    <h4>Max</h4>
+                </div>
+                <div class="info-pet">
+                    <img src="img/Gato-dentro-de-caja-de-carton-iStock.jpg" alt="cat-box">
+                    <h4>Jerry</h4>
+                </div>
+                <div class="info-pet">
+                    <img src="img/cat-play.jpg" alt="">
+                    <h4>Tom</h4>
+                </div>
+                <div class="info-pet">
+                    <img src="img/mascotas-2.jpg" alt="">
+                    <h4>Matias &amp; Samantha</h4>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
+
 

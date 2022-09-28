@@ -1,62 +1,79 @@
 ﻿@page
 @model MascotaFeliz.App.Frontend.Pages.CrearVisitasModel
 @{
+        String mascotaVisitada = @Model.mascota.Nombre ;
 }
 
+<head>
+        <link rel="stylesheet" href="~/css/styleCard.css" />
+        <link rel="stylesheet" href="~/css/stylesFormulario.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+                crossorigin="anonymous">
 
-<h2>Nueva visita:</h2>
+</head>
 
-<form method="post" style="width: 20px;">
-    
+<main class="container mt-5">
+        <div class="row">
+                <div class="col-md-3" id="form" style="text-align:left">
+                        <h1>Ingresar Nueva Visita</h1>
+                        <br>
+                        <h2 style="color:white ;">Mascota : @mascotaVisitada </h2>
+                        
+                        <form method="post">
 
-        <input type="hidden" asp-for="visitaPyP.Id">
 
-        <input type="hidden" asp-for="mascota.Id" name = "mascotaId">
+                                <input type="hidden" asp-for="visitaPyP.Id">
 
-        <input type="hidden" asp-for="mascota.Veterinario.Id" name = "veterinarioId">
+                                <input type="hidden" asp-for="mascota.Id" name="mascotaId">
 
-        <label asp-for="mascota.Nombre">Nombre Mascota</label>
-        <input asp-for="mascota.Nombre" readonly>
-        <br>
+                                <input type="hidden" asp-for="mascota.Veterinario.Id" name="veterinarioId">
 
-        <label asp-for="historia.Id">Numero de historia</label>
-        <input asp-for="historia.Id" name = "historiaId" readonly>
-        <br>
+                                <input type="hidden" asp-for="mascota.Nombre">
+                                <br>
+                                <input type="hidden" asp-for="historia.Id" name="historiaId">
+                                <br>
 
-        <label asp-for="mascota.Veterinario.Nombres">Veterinario Asigando</label>
-        <input asp-for="mascota.Veterinario.Nombres" readonly>
-        <br>
+                                <input type="hidden" asp-for="visitaPyP.FechaVisita">
+                                <br>
 
-        <label asp-for="mascota.Veterinario.Apellidos">Veterinario Asigando</label>
-        <input asp-for="mascota.Veterinario.Apellidos" readonly>
-        <br>
+                                <label asp-for="visitaPyP.Temperatura" style="color:white ;"></label>
+                                <input asp-for="visitaPyP.Temperatura" id="controls" type="text"
+                                        class="form-control mb-3" placeholder="Temperatura">
+                                <br>
 
-        <label asp-for="visitaPyP.FechaVisita"></label>
-        <input asp-for="visitaPyP.FechaVisita">
-        <br>
+                                <label asp-for="visitaPyP.Peso" style="color:white ;"></label>
+                                <input asp-for="visitaPyP.Peso" id="controls" type="text" class="form-control mb-3"
+                                        placeholder="Peso">
+                                <br>
 
-        <label asp-for="visitaPyP.Temperatura"></label>
-        <input asp-for="visitaPyP.Temperatura">
-        <br>        
-        <label asp-for="visitaPyP.Peso"></label>
-        <input asp-for="visitaPyP.Peso">
-         <br>       
-        <label asp-for="visitaPyP.FrecuenciaRespiratoria"></label>
-        <input asp-for="visitaPyP.FrecuenciaRespiratoria">
-        <br>        
-        <label asp-for="visitaPyP.FrecuenciaCardiaca"></label>
-        <input asp-for="visitaPyP.FrecuenciaCardiaca">
-        <br> 
-        <label asp-for="visitaPyP.EstadoAnimo"></label>
-        <input asp-for="visitaPyP.EstadoAnimo">
-        <br> 
-        <label asp-for="visitaPyP.Pecomendaciones">Recomendaciones</label>
-        <input asp-for="visitaPyP.Pecomendaciones">
-        <br> 
-        <input type="submit" class="btn" value="Crear" >
- 
-</form>
-<br>
-<br>
-<a asp-area="" asp-page="/Mascotas/DetallesMacotas" asp-route-historiaId="@Model.mascota.Id">Volver A Detalles Mascota</a>
+                                <label asp-for="visitaPyP.FrecuenciaRespiratoria" style="color:white ;"></label>
+                                <input asp-for="visitaPyP.FrecuenciaRespiratoria" id="controls" type="text"
+                                        class="form-control mb-3" placeholder="Frecuencia respiratoria">
+                                <br>
 
+                                <label asp-for="visitaPyP.FrecuenciaCardiaca" style="color:white ;"></label>
+                                <input asp-for="visitaPyP.FrecuenciaCardiaca" id="controls" type="text"
+                                        class="form-control mb-3" placeholder="Frecuencia Cardiaca">
+                                <br>
+
+                                <input asp-for="visitaPyP.EstadoAnimo" id="controls" type="text"
+                                        class="form-control mb-3" placeholder="Estado De Animo">
+                                <br>
+
+                                <input asp-for="visitaPyP.Pecomendaciones" id="controls" type="text"
+                                        class="form-control mb-3" placeholder="Recomendaciones">
+                                <br>
+                                <input type="submit" class="btn btn-success" value="Crear">
+
+                        </form>
+                </div>
+                <div class="col-md-8">
+                        <div class="col-md-9">
+                                <br>
+                                <br>
+                                <a asp-area="" class="btn-fourth" style="background-color: rgb(55, 90, 122);"  asp-page="/Mascotas/DetallesMascotas" asp-route-mascotaId="@Model.mascota.Id">Volver A Detalles Mascota</a>
+                        </div>
+                </div>
+        </div>
+</main>
