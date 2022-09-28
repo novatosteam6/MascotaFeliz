@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+header {
+    width: 100%;
+    height: 56px;
+    border-style: solid;
+    background: #483d8b;
+    color: #ffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    
+}
+.container {
+    width: 98%;
+    margin: auto;
+}
+
+h1 {
+    float: left;
+    margin: 2px;
+}
+
+header .container {
+    display: table;
+}
+
+footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 25px;
+}
+.copy {
+    font-size: 20px;
+}
+
+.social {
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+}
+
+.social a {
+    color: #333;
+    text-decoration: none;
+}
+@media (min-width:1024px) {
+    .container {
+        width: 1000px;
+    }
+}
+/***** Styles menu *****/
+
+#menu-bar {
+    display: none;
+}
+
+header label {
+    float: right;
+    font-size: 28px;
+    margin: 6px 0;
+    cursor: pointer;
+}
+
+.menu {
+    position: absolute;
+    top: 53px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(72, 61, 139,0.9); 
+    transition: all 0.5s;
+    transform: translateX(-100%);
+}
+
+.menu a {
+    display: block;
+    color: #fff;
+    height: 50px;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 2px solid rgba(255, 61, 139,0.9);
+}
+
+.menu a:hover {
+    background: rgba(51, 102, 255, 0.4);
+}
+#menu-bar:checked ~ .menu {
+    transform: translateX(0%);
+}
+
+.icon-pet {
+    background: #ffff;
+    border-radius: 25%;
+    margin: 6px 0;
+    float:left;
+}
+section {
+    width: 100%;
+    margin-bottom: 25px;
+}
+#wellcome {
+    text-align: center;
+    text-transform: uppercase;
+}
+#wellcome p {
+    text-transform: lowercase;
+}
+
+@media (min-width:1024px) {
+    .menu {
+        position: static;
+        width: auto;
+        height: auto;
+        transform: translateX(0%);
+        float: right;
+        display: flex;
+        
+    }
+    .menu a {
+        border: none;
+    }
+    header label {
+        display: none;
+    }
+}
+/****Styles banner****/
+
+#banner {
+    margin-top: 50px;
+    position: relative;
+}
+
+#banner img {
+    width: 100%;
+    
+}
+
+#banner .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #fff;
+}
+
+#banner h2 {
+    font-size: 28px;
+}
+
+#banner a {
+    display: block;
+    width: 100px;
+    padding: 7px;
+    margin-top: 10px;
+    border: 3px solid darkslateblue;
+    text-decoration: none;
+    color: #fff;       
+}
+
+#banner a:hover {
+    background: rgba(51, 102, 255, 0.4);       
+}
+
+@media (min-width:480px) {
+    #banner h2 {
+        font-size: 40px;
+    }
+    
+    #banner a {
+        margin-top: 25px; 
+    }
+    #banner img {
+        background-image: url(../img/cropped-mascotas.png);
+    }
+}
+
+@media (min-width:768px) {
+    #banner {
+        height: 300px;
+        overflow: hidden;
+    }
+    #banner img {
+        height: auto;
+        margin-top: -100px;
+    }
+}
+
+@media (min-width:1024px) {
+    
+    #banner img {
+        margin-top: -200px;
+    }
+}
+/****Styles Blog****/
+#blog h3, h4 {
+    text-align: center;
+}
+#blog .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#blog article {
+    margin: 15px;
+}
+#blog img {
+    width: 100%;
+    max-width: 400px;
+}
+    
+/***Styles info***/ 
+
+#info {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+.info-pet img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 7px solid darkslateblue;
+    
+}
+#info .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.info-pet {
+    margin: 20px;
+}
+
+@media (min-width:768px) {
+    .social {
+        width: auto;
+    }
+    
+    footer .container {
+        justify-content: space-between;
+    }
+}
+@media (min-width:1024px) {
+    .info-pet {
+        width: auto;
+    }
+}
+

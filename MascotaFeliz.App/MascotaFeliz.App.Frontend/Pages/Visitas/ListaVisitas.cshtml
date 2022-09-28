@@ -3,48 +3,97 @@
 @{
 }
 
-        <div class="cont-botones">
-           <div>
-                 Numero de Historia: @Model.historia.Id
-           </div>   
-           <div>
-                 Fecha De Apertura: @Model.historia.FechaInicial
-           </div>   
-           <div>
-                 Mascota: @Model.mascota.Nombre
-           </div>  
-           <div>
-                 Especie: @Model.mascota.Especie
-           </div> 
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/stylesFormulario.css">
+    <link rel="stylesheet" href="~/css/styleCard.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-        <div class="cont-tabla">
-            <table class="tabla">
-                <tr>
-                    <th>FechaVisita</th>
-                    <th>Detalles</th>
-                    <th>Eliminar</th>
-                </tr>
-            
-                @foreach (var visita in Model.listaVisitas)
-                {
-                    <tr>
-                    <td>@visita.FechaVisita</td>
-                    <td>
-                        <a class="btn-a" asp-page="./DetallesVisita" asp-route-visitaId="@visita.Id" asp-route-historiaId="@Model.historia.Id" asp-route-mascotaId="@Model.mascota.Id">
-                            <img src="~/images/detalle.png" style="width:30px ;" alt="detalles">
-                        </a>
-                    </td>
+   
+</head>
 
-                    <td>
-                        <a class="btn-a" asp-page="./ListaVisitas" asp-route-visitaId="@visita.Id" asp-route-historiaId="@Model.historia.Id" asp-route-mascotaId="@Model.mascota.Id">
-                            <img src="~/images/delete-bin-5-line.png" alt="eliminar">
-                        </a>    
-                    </td>
-                </tr>
-                }
-            </table>
+<br>
+<br>
+<br>
+
+<main class="container mt-5">
+        <div class="row">
+            <div class="col-md-3" id="form">
+                <div>
+                <h3 style="color:white ;">Numero de Historia: @Model.historia.Id</h3> 
+                </div>   
+                <div>
+                    <h3 style="color:white ;">Fecha De Apertura: @Model.historia.FechaInicial</h3>
+                </div>   
+                <div>
+                    <h3 style="color:white ;">Mascota: @Model.mascota.Nombre</h3>
+                 </div>  
+                <div>
+                    <h3 style="color:white ;">Especie: @Model.mascota.Especie</h3>
+                </div> 
+                <br>
+                <br>
+                <div>
+                    <a class="btn-third" asp-area="" asp-page="/Mascotas/DetallesMascotas" asp-route-mascotaId="@Model.mascota.Id">Volver A detalles mascota</a>
+                </div>
+            </div>
+           
+            <div class="col-md-8">
+                <div class="col-md-9">
+                    <div class="container-img-mascota">
+                        <img src="~/img/NVWQSYGX3RC7ZBEHLPLDVXA3PU_preview_rev_1.png" alt="Mascotas">
+                    </div>
+                    <table class="table">
+                        <thead class="table-success table-striped">
+                            <tr>
+                
+                                <th id="table-form">Fecha Visita</th>
+                                <th id="table-form">Estado De Animo</th>
+                                <th id="table-form">Peso</th>
+                                <th id="table-form">Frecuencia Cardiaca</th>
+                                <th id="table-form">Recomendaciones</th>
+                                <th id="table-form">Detalles</th>
+                                <th id="table-form">Eliminar</th>
+                                
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                     @foreach (var visita in Model.listaVisitas)
+                    {
+                            <tr>
+                                
+                                <td id="table2-form">@visita.FechaVisita</td>
+                                <td id="table2-form">@visita.EstadoAnimo</td>
+                                <td id="table2-form">@visita.Peso</td>
+                                <td id="table2-form">@visita.FrecuenciaCardiaca</td>
+                                <td id="table2-form">@visita.Pecomendaciones</td>
+                                
+                                <td id="table2-form">
+                                    <a class="btn btn-primary"  asp-page="./DetallesVisita" asp-route-visitaId="@visita.Id" asp-route-historiaId="@Model.historia.Id" asp-route-mascotaId="@Model.mascota.Id">
+                                        <i class="bi bi-search"></i>Detalles</a>
+                                </td>
+
+        
+                                <td id="table2-form">
+                                    <a class="btn btn-danger" asp-page="./ListaVisitas" asp-route-visitaId="@visita.Id" asp-route-historiaId="@Model.historia.Id" asp-route-mascotaId="@Model.mascota.Id">
+                                        <i class="bi bi-trash"></i>Eliminar
+                                    </a>
+                                </td>
+                             </tr>
+                    }
+                    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-<div>
-<a asp-area="" asp-page="/Mascotas/DetallesMascotas" asp-route-mascotaId="@Model.mascota.Id">Volver A detalles mascota</a>
-</div>
+    </main>
+
+        
+

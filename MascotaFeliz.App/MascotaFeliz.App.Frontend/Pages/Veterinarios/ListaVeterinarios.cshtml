@@ -3,53 +3,96 @@
 @{
 }
 
-        <div class="cont-botones">
-            <a class="btn" asp-page="./CrearVeterinarios">Registrar Veterinario</a>           
-        </div>
 
-        <div class="cont-tabla">
-            <table class="tabla">
-                <tr>
-                    <th>Id</th>
-                    <th>Cedula</th>
-                    <th>Nombres</th>
-                    <th>Apellidos</th>
-                    <th>Dirección</th>
-                    <th>Telefono</th>
-                    <th>Tarjeta profesional</th>
-                    <th>Detalles</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                </tr>
-                @foreach (var veterinario in Model.listaVeterinarios)
-                {
-                    <tr>
-                    <td>@veterinario.Id</td>
-                    <td>@veterinario.Cedula</td>
-                    <td>@veterinario.Nombres</td>
-                    <td>@veterinario.Apellidos</td>
-                    <td>@veterinario.Direccion</td>
-                    <td>@veterinario.Telefono</td>
-                    <td>@veterinario.TarjetaProfesional</td>
-                    <td>
-                        <a class="btn-a" asp-page="./DetallesVeterinarios" asp-route-veterinarioId="@veterinario.Id">
-                            <img src="~/images/detalle.png" style="width:30px ;" alt="detalles">
-                        </a>
-                    </td>
-                    <td>
-                        <a class="btn-a" asp-page="./EditarVeterinarios" asp-route-veterinarioId="@veterinario.Id">
-                            <img src="~/images/pencil-fill.png" alt="editar">
-                        </a>
-                    </td>
-                    <td>
-                        <a class="btn-a" asp-page="./ListaVeterinarios" asp-route-veterinarioId="@veterinario.Id">
-                            <img src="~/images/delete-bin-5-line.png" alt="eliminar">
-                        </a>    
-                    </td>
-                </tr>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/stylesFormulario.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-                }
-                
-               
-            </table>
+    <title>Veterinarios</title>
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-md-3" id="form">
+                <h1>Ingresar Nuevo Veterinario</h1>
+
+                <form method="post">
+                    
+
+                    <input asp-for="veterinario.Cedula" id="controls" type="text" class="form-control mb-3" placeholder="Ingrese Cedula">
+                    <input asp-for="veterinario.Nombres"  id="controls" type="text" class="form-control mb-3"  placeholder="Ingrese Nombres">
+                    <input asp-for="veterinario.Apellidos" id="controls" type="text" class="form-control mb-3" placeholder="Ingrese Apellidos">
+                    <input asp-for="veterinario.Direccion"    id="controls" type="text" class="form-control mb-3" placeholder="Ingrese Direccion">
+                    <input asp-for="veterinario.Telefono" id="controls" type="text" class="form-control mb-3" placeholder="Ingrese Telefono">
+                    <input asp-for="veterinario.TarjetaProfesional"    id="controls" type="text" class="form-control mb-3" placeholder="Tarejta Profesional">
+                    
+                    <br>
+                    <input type="submit"  value="Registrar" class="btn btn-success">
+
+                </form>
+            </div>
+           
+            <div class="col-md-8">
+                <div class="col-md-9">
+                    <div class="container-img-veterinario">
+                        <img src="~/img/f608x342-1115157_1144880_0_preview_rev_1.png" alt="Mascotas">
+                    </div>
+                    <table class="table">
+                        <thead class="table-success table-striped">
+                            <tr>
+                                <th id="table-form">Id</th>
+                                <th id="table-form">Nombres</th>
+                                <th id="table-form">Apellidos</th>
+                                <th id="table-form">Direccion</th>
+                                <th id="table-form">Telefono</th>
+                                <th id="table-form">Tarjeta Profesional</th>
+                                <th colspan="3" id="table-form"></th> 
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                     @foreach (var veterinario in Model.listaVeterinarios)
+                    {
+                            <tr>
+                                <td id="table2-form">@veterinario.Id</td>
+                                <td id="table2-form">@veterinario.Nombres</td>
+                                <td id="table2-form">@veterinario.Apellidos</td>
+                                <td id="table2-form">@veterinario.Direccion</td>
+                                <td id="table2-form">@veterinario.Telefono</td>
+                                <td id="table2-form">@veterinario.TarjetaProfesional</td>
+
+                                <td id="table2-form">
+                                    <a class="btn btn-primary"  asp-page="./DetallesVeterinarios" asp-route-veterinarioId="@veterinario.Id">
+                                        <i class="bi bi-search"></i>Detalles</a>
+                                </td>
+
+                                <td id="table2-form">
+                                    <a class="btn btn-info" asp-page="./EditarVeterinarios" asp-route-veterinarioId="@veterinario.Id">
+                                        <i class="bi bi-pencil-square"></i>Editar
+                                    </a>
+                                </td>
+                                <td id="table2-form">
+                                    <a class="btn btn-danger" asp-page="./ListaVeterinarios" asp-route-veterinarioId="@veterinario.Id">
+                                        <i class="bi bi-trash"></i>Eliminar
+                                    </a>
+                                </td>
+                             </tr>
+                    }
+                    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
+    </main>
+</body>

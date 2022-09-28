@@ -3,51 +3,62 @@
 @{
 }
 
-<H3>Detalles de la mascota consultada </H3>
+<head>
+    <link rel="stylesheet" href="~/css/styleCard.css" />
+     <link rel="stylesheet" href="~/css/stylesFormulario.css">
+</head>
 
-<div>
-    id mascota: @Model.mascota.Id
-</div>
+<body>
+    <br>
+    <br>
+    <br>
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-md-8">
+                <br>
+                <br>
+                <div class="card__perfil" style="background-color: rgb(55, 90, 122);">
+                    <div class="card__nombre">
+                        <img class="img2" src="~/images/mascotas-preferidas.jpg" alt="">
+                        <h1>@Model.mascota.Nombre</h1>
+                        <p>Historia numero: @Model.mascota.Historia.Id</p>
+                    </div>
+                    <hr>
+                    <div class="card__descripcion">
+                        <p>
+                            id mascota: @Model.mascota.Id <br>
+                            Color: @Model.mascota.Color<br>
+                            Especie: @Model.mascota.Especie<br>
+                            Raza: @Model.mascota.Raza<br>
+                            Dueño: @Model.mascota.Dueno.Nombres @Model.mascota.Dueno.Apellidos<br>
+                            Veterinario: @Model.mascota.Veterinario.Nombres @Model.mascota.Veterinario.Apellidos<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-<div>
-    Historia numero: @Model.mascota.Historia.Id
-</div>
+            <div class="col-md-3" style="background-color: rgb(55, 90, 122);">
+                <br>
+                
+                <a class="btn-fourth" asp-area="" asp-page="/Mascotas/ListaMascotas">Volver A Lista Mascotas</a>
+                <br>
+                
 
-<div>
-    Nombre: @Model.mascota.Nombre
-</div>
+                    <a class="btn-third" asp-area="" asp-page="/Visitas/CrearVisitas"
+                        asp-route-mascotaId="@Model.mascota.Id">Registrar
+                        nueva
+                        visita</a>
 
-<div>
-    Color: @Model.mascota.Color
-</div>
+                <br>
 
-<div>
-    Especie: @Model.mascota.Especie
-</div>
+                    <a class="btn-third" asp-area="" asp-page="/Visitas/ListaVisitas"
+                        asp-route-mascotaId="@Model.mascota.Id"
+                        asp-route-historiaId="@Model.mascota.Historia.Id">Historia</a>
 
-<div>
-    Raza: @Model.mascota.Raza
-</div>
+            </div>
+        </div>
+    </main>
 
-<div>
-    Dueño: @Model.mascota.Dueno.Nombres @Model.mascota.Dueno.Apellidos
-</div>
 
-<div>
-    Veterinario: @Model.mascota.Veterinario.Nombres @Model.mascota.Veterinario.Apellidos
-</div>
 
-<br>
-<br>
-<br>
-<div>
-<a asp-area="" asp-page="/Mascotas/ListaMascotas">Volver A Lista Mascotas</a>
-</div>
-<br>
-<div>
-<a asp-area="" asp-page="/Visitas/CrearVisitas" asp-route-mascotaId="@Model.mascota.Id">Registrar nueva visita</a>
-</div>
-<br>
-<div>
-<a asp-area="" asp-page="/Visitas/ListaVisitas" asp-route-mascotaId="@Model.mascota.Id" asp-route-historiaId="@Model.mascota.Historia.Id">Historia</a>
-</div>
+</body>

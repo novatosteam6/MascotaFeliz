@@ -2,38 +2,63 @@
 @model MascotaFeliz.App.Frontend.Pages.DetallesDuenosModel
 @{
 }
-<h1>Datos Del dueño consultado</h1>
 
-<div>
-    id: @Model.dueno.Id
-</div>
 
-<div>
-    cedula: @Model.dueno.Cedula
-</div>
+<head>
+    <link rel="stylesheet" href="~/css/styleCard.css" />
+    <link rel="stylesheet" href="~/css/stylesFormulario.css">
+</head>
 
-<div>
-    Nombre: @Model.dueno.Nombres
-</div>
-
-<div>
-    Apellido: @Model.dueno.Apellidos
-</div>
-
-<div>
-    Direccion: @Model.dueno.Direccion
-</div>
-
-<div>
-    Telefono: @Model.dueno.Telefono
-</div>
-
-<div>
-    Correo: @Model.dueno.Correo
-</div>
 <br>
 <br>
 <br>
-<div>
-<a asp-area="" asp-page="/Duenos/ListaDuenos">Volver A Lista Dueños</a>
-</div>
+<br>
+<br>
+<main class="container mt-5">
+    <div class="row">
+        <div class="col-md-8" style="background-color: rgb(55, 90, 122); color: white;">
+
+            <h1>Detalles dueño</h1>
+            <br>
+            <br>
+            <br>
+
+            <div>
+                id: @Model.dueno.Id
+            </div>
+
+            <div>
+                cedula: @Model.dueno.Cedula
+            </div>
+
+            <div>
+                Nombres: @Model.dueno.Nombres
+            </div>
+
+            <div>
+                Apellidos: @Model.dueno.Apellidos
+            </div>
+
+            <div>
+                Direccion: @Model.dueno.Direccion
+            </div>
+
+            <div>
+                Telefono: @Model.dueno.Telefono
+            </div>
+
+            <div>
+                Correo: @Model.dueno.Correo
+            </div>
+            <br>
+            <br>
+
+        </div>
+
+        <div class="col-md-3-no-shadow">
+            <a class="btn-third" asp-area="" asp-page="/Duenos/ListaDuenos" style="background-color: rgb(55, 90, 122);">Volver A Lista
+                Dueños</a>
+        </div>
+
+    </div>
+</main>

@@ -13,6 +13,8 @@ namespace MascotaFeliz.App.Frontend.Pages
     {
         private readonly IRepositorioDueno _repoDueno;
         public IEnumerable<Dueno> listaDuenos {get;set;}
+        [BindProperty]
+        public Dueno dueno { get; set; }
 
         public ListaDuenosModel()
         {
@@ -27,8 +29,25 @@ namespace MascotaFeliz.App.Frontend.Pages
                 _repoDueno.DeleteDueno(duenoId.Value);
             }
 
+            dueno = new Dueno();
+
             listaDuenos = _repoDueno.GetAllDuenos();
             return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            
+            if (dueno != null)
+            {
+                _repoDueno.AddDueno(dueno);
+            }
+            
+            return RedirectToPage("/Duenos/ListaDuenos");
         }
     }
 }

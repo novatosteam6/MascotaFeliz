@@ -1,77 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veterinarios</title>
-    <link rel="shortcut icon" href="./images/hp-removebg-preview.png" type="image/x-icon">
-    <link rel="stylesheet" href="./styles/normalize.css">
-    <link rel="stylesheet" href="./styles/NavBar.css">
-    <link rel="stylesheet" href="./styles/diap.css">
-    <link rel="stylesheet" href="./styles/info.css">
-    <link rel="stylesheet" href="./styles/footers.css">
+    <title>Pets</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width-divice-width, user-scalable-no, initial-scale-1, maximum-scale-1, minimum-scale-1">
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pruebaCss.css">
+    
+    <script src="https://kit.fontawesome.com/589eef25b8.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <nav id="navBar" class="navBar">
-        <input type="checkbox" id="check-nav">
-        <label for="check-nav" class="checkMenu">
-            <img src="./images/menu-line.png" alt="menu">
-        </label>
-        <a href="./index.html" class="enlace">
-            <img src="./images/hp-removebg-preview.png" alt="logo">
-        </a>
-        <div class="list-a">
-            <a href="./Mascotas.html">MASCOTAS</a>
-            <a href="./Duenos.html">DUEÑOS</a>
-            <a href="./Veterinarios.html">VETERINARIOS</a>
-        </div>
-    </nav>
-    <section>
-        <div class="cont-diaps">
-            <div class="diaps">
+    <header>
+        <div class="container">
+            <img src="img/icon-pets.png" alt="pets" class="icon-pet">
+            <h1>PETS</h1>
+            <input type="checkbox" id="menu-bar">
+            <label class="icon-menu" for="menu-bar"></label>
 
-                <input type="radio" name="radio-btn" id="radio1">
-                <input type="radio" name="radio-btn" id="radio2">
-                <input type="radio" name="radio-btn" id="radio3">
-
-                <div class="diap primer-diap">
-                    <img src="./images/img1.jpg" alt="img1">
-                </div>
-
-                <div class="diap">
-                    <img src="./images/img2.jpg" alt="img2">
-                </div>
-
-                <div class="diap">
-                    <img src="./images/img3.jpg" alt="img3">
-                </div>
-
-                <div class="nav-color">
-                    <div class="btn-color-1"></div>
-                    <div class="btn-color-2"></div>
-                    <div class="btn-color-3"></div>
-                </div>
-
+            <nav class="menu">
+                <ul class="nav">
+                    <li><a href="#home"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a href="#manage"><i class="fa-sharp fa-solid fa-gear"></i>Manege</a>
+                        <ul>
+                            <li><a href="mascota.html">Pets</a></li>
+                            <li><a href="veterinario.html">Vets</a></li>
+                            <li><a href="propietario.html">Owns</a></li>
+                            <li><a href="historia.html">Clinic History</a></li>
+                            <li><a href="visita.html">Visits</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#accesories"><i class="fa-solid fa-bone"></i>Accessories</a>
+                    </li>
+                    <li>
+                        <a href="#contact"><i class="fa-solid fa-phone"></i>Contact</a>
+                    </li>
+                </ul>
+            </nav>
             </div>
-            <div class="nav-diap">
-                <label for="radio1" class="diap-btn"></label>
-                <label for="radio2" class="diap-btn"></label>
-                <label for="radio3" class="diap-btn"></label>
-            </div>
-        </div>
-    </section>
+    </header>
     <main>
-        <div class="cont-info">
-            <img src="./images/veterinarian-check-ing-puppy-s-health-2 (1).jpg" alt="img-info">
-            <div class="text">
-                <h2>Nuestro compromiso <span>es con las mascotas</span></h2>
-                <p>El equipo médico todos los días se prepara para brindar el mejor servicio a las mascotas que lo necesiten. Es fundamental en nuestra filosofía encontrar una respuesta a todos los que nos consultan por el bienestar, salud, higiene y nutrición de sus perros o gatos.</p>
+        <section id="banner">
+            <img src="img/5-apps-en-español-que-debe-tener-todo-dueño-de-mascotas.jpg" alt="banner pets">
+            <div class="container">
+                <h2>They are one more member of the family</h2>
+                <p>You think so?</p>
+                <a href="#">Read more</a>
+            </div>
+        </section>
+        <section id="wellcome">
+            <h2>Welcome to the club</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi, beatae voluptatum inventore
+                dicta, excepturi odit nulla, quas corporis aut eveniet. Suscipit aperiam deleniti aliquid rerum eligendi
+                illo assumenda nemo.</p>
+        </section>
+        <section id="blog">
+            <h3>The latest in our community</h3>
+            <div class="container">
+                <article>
+                    <img src="img/397244_mediana_LbizPreX.jpg" alt="">
+                    <h4>Animals need besides a home they need love</h4>
+                </article>
+                <article>
+                    <img src="img/tr%C3%ADo-de-mascotas-1-1.png" alt="">
+                    <h4>Choose your perfect pet</h4>
+                </article>
+                <article>
+                    <img src="img/6b6ca1cb57215edcd686445a2e3562e4.jpg" alt="">
+                    <h4>They need to run free and happy</h4>
+                </article>
+            </div>
+        </section>
+        <section id="info">
+            <h3>Many of our friends are looking for a home to adopt them</h3>
+            <div class="container">
+                <div class="info-pet">
+                    <img src="img/Feliz.jpg" alt="happy-pet">
+                    <h4>Max</h4>
+                </div>
+                <div class="info-pet">
+                    <img src="img/Gato-dentro-de-caja-de-carton-iStock.jpg" alt="cat-box">
+                    <h4>Jerry</h4>
+                </div>
+                <div class="info-pet">
+                    <img src="img/cat-play.jpg" alt="">
+                    <h4>Tom</h4>
+                </div>
+                <div class="info-pet">
+                    <img src="img/mascotas-2.jpg" alt="">
+                    <h4>Matias &amp; Samantha</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p class="copy">Pets &copy; 2020</p>
+            <div class="social">
+                <a class="icon-face" href="#"></a>
+                <a class="icon-twit" href="#"></a>
+                <a class="icon-whatsapp" href="#"></a>
+                <a class="icon-youtube" href="#"></a>
             </div>
         </div>
-    </main>
-    <footer class="footer">
-        CONSULTA GENERAL | CONSULTA ESPECIALIZADA VETERINARIA | CARDIOLOGÍA VETERINARIA | DERMATOLOGÍA VETERINARIA | MÉTODOS DIAGNÓSTICOS | RAYOS X DIGITAL | ECOGRAFÍA | ENDOSCOPIA VETERINARIA | LABORATORIO CLÍNICO VETERINARIO | HEMOGRAMAS | QUÍMICAS SANGUÍNEAS | SDMA - DIAGNÓSTICO TEMPRANO DE INSUFICIENCIA RENAL | T 4 CANINA - DIAGNÓSTICO DE HIPOTIROIDISMO | PRUEBAS DE CORTISOL - DIAGNÓSTICO DE CUSHING | UPC - DIAGNÓSTICO DE ENFERMEDAD RENAL | PATOLOGÍA Y BIOPSIAS | MEDICIÓN DE PRESIÓN ARTERIAL DIGITAL | CIRUGÍA VETERINARIA GENERAL & ESPECIALIZADA | HOSPITALIZACIÓN MONITOREADA 7/24 | DIÁLISIS PERITONEAL | K-LÁSER - TÉCNICA INNOVADORA PARA EL MANEJO DEL DOLOR E INFLAMACIÓN | SERVICIO DE BAÑO Y PELUQUERÍA COSMÉTICO Y TERAPÉUTICO | DROGUERÍA VETERINARIA | MEDICINA FELINA ESPECIALIZADA | ONCOLOGÍA VETERINARIA | HOSPITALIZACIÓN Y CUIDADOS INTERMEDIOS | MEDICINA INTERNA VETERINARIA |
     </footer>
 </body>
+
+
 </html>

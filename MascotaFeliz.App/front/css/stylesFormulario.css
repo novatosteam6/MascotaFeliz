@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    
+    background-image: url(../img/fondoform.png);
+}
+h1 {
+    color: #ffff;
+}
+#form{
+    background: rgb(55, 90, 122);
+    border-radius: 5px;
+}
+#table-form{
+    background: rgb(55, 90, 122);
+    text-align: center;
+    color: #ffff;
+    font-size: 20px;
+    border: 1px solid white;
+}
+#table2-form{
+    background: rgb(218, 216, 216);
+    text-align: center;
+}
+.col-md-3 #form{
+    border-radius: 5px;
+}
+
+.col-md-3 {
+    text-align: center;
+    padding: 20px;
+    box-shadow: 7px 13px 37px #000 ;
+
+}
+.container-img-mascota {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+    width: 911px;
+    height: 80px;
+}
+.container-img-mascota img {
+    position: absolute;
+    top: -148px;
+} 
+.container-img-veterinario{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    width: 911px;
+    height: 130px;
+}
+.container-img-veterinario img{
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    top: -58px;
+}
+.container-img-propietario{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    width: 911px;
+    height: 165px;
+}
+.container-img-propietario img{
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: -69px;
+}
+#controls {
+    padding: 10px;
+    border: 1px solid #1f53c5;
+}

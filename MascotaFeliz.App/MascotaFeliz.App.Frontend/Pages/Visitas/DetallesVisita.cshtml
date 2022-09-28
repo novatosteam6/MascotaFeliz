@@ -3,56 +3,73 @@
 @{
 }
 
-
-<h1>Detallado De la visita</h1>
-
-<div>
-    Numero de Historia: @Model.historia.Id
-</div>
-
-<div>
-    id de la visita: @Model.visitaPyP.Id
-</div>
-
-<div>
-    Fecha De Visita: @Model.visitaPyP.FechaVisita
-</div>
-
-<div>
-    Nombre mascota: @Model.mascota.Nombre
-</div>
-
-<div>
-    Especie: @Model.mascota.Especie
-</div>
-
-<div>
-    Temperatura: @Model.visitaPyP.Temperatura
-</div>
-
-<div>
-    Peso: @Model.visitaPyP.Peso
-</div>
-
-<div>
-    Frecuencia Respiratoria: @Model.visitaPyP.FrecuenciaRespiratoria
-</div>
-
-<div>
-    Frecuencia Cardiaca: @Model.visitaPyP.FrecuenciaCardiaca
-</div>
-
-<div>
-    Estado de animo: @Model.visitaPyP.EstadoAnimo
-</div>
-
-<div>
-    Recomendaciones: @Model.visitaPyP.Pecomendaciones
-</div>
+<head>
+    <link rel="stylesheet" href="~/css/styleCard.css" />
+    <link rel="stylesheet" href="~/css/stylesFormulario.css">
+</head>
 
 <br>
 <br>
 <br>
-<div>
-<a asp-area="" asp-page="/Visitas/ListaVisitas" asp-route-historiaId="@Model.historia.Id" asp-route-mascotaId="@Model.mascota.Id">Volver A Lista Visitas</a>
-</div>
+<br>
+<br>
+<main class="container mt-5">
+    <div class="row">
+        <div class="col-md-8" style="background-color: rgb(55, 90, 122); color: white;" >
+
+            <h1>Detallado De la visita</h1>
+            <br>
+            <br>
+            <br>
+            <div>
+                Numero de Historia: @Model.historia.Id
+            </div>
+            <div>
+                id de la visita: @Model.visitaPyP.Id
+            </div>
+
+            <div>
+                Fecha De Visita: @Model.visitaPyP.FechaVisita
+            </div>
+
+            <div>
+                Nombre mascota: @Model.mascota.Nombre
+            </div>
+
+            <div>
+                Especie: @Model.mascota.Especie
+            </div>
+
+            <div>
+                Temperatura: @Model.visitaPyP.Temperatura
+            </div>
+
+            <div>
+                Peso: @Model.visitaPyP.Peso
+            </div>
+
+            <div>
+                Frecuencia Respiratoria: @Model.visitaPyP.FrecuenciaRespiratoria
+            </div>
+
+            <div>
+                Frecuencia Cardiaca: @Model.visitaPyP.FrecuenciaCardiaca
+            </div>
+
+            <div>
+                Estado de animo: @Model.visitaPyP.EstadoAnimo
+            </div>
+
+            <div>
+                Recomendaciones: @Model.visitaPyP.Pecomendaciones
+            </div>
+
+        </div>
+
+        <div class="col-md-3-no-shadow" >
+            <a class="btn-third" asp-area="" asp-page="/Visitas/ListaVisitas" asp-route-historiaId="@Model.historia.Id"
+                asp-route-mascotaId="@Model.mascota.Id" style="background-color: rgb(55, 90, 122);">Volver A Lista Visitas</a>
+        </div>
+
+    </div>
+</main>
