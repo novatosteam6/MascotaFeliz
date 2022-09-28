@@ -1,50 +1,66 @@
 ﻿@page
 @model MascotaFeliz.App.Frontend.Pages.EditarMascotasModel
 @{
-    int vmascotaId = Model.mascota.Id; 
+    
 }
 
-<h2>Crear Mascota:</h2>
 
-<form method="post" style="width: 20px;">
-    
+<head>
+    <link rel="stylesheet" href="~/css/styleCard.css" />
+    <link rel="stylesheet" href="~/css/stylesFormulario.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-        <input type="hidden" asp-for="mascota.Id">
+</head>
 
-        <label asp-for="mascota.Nombre"></label>
-        <input asp-for="mascota.Nombre">
-        <br>
+<main class="container mt-5">
+    <div class="row">
+        <div class="col-md-3" id="form" style="text-align:left">
+            <h1>Editar Mascota</h1>
 
-        <label asp-for="mascota.Color"></label>
-        <input asp-for="mascota.Color">
-        <br>        
-        <label asp-for="mascota.Especie"></label>
-        <input asp-for="mascota.Especie">
-         <br>       
-        <label asp-for="mascota.Raza"></label>
-        <input asp-for="mascota.Raza">
-        <br>        
-        <label for="dueno">Dueño</label>
-        <select id="dueno" asp-for="mascota.Dueno.Id" name = "duenoId">
-            <option value="0">Seleccione un Dueño</option>
-            @foreach (var dueno in Model.listaDuenos)
-            {
-                <option value="@dueno.Id">@dueno.Nombres @dueno.Apellidos</option>
-            }
-        </select>
-        <label for="veterinario">Veterinario</label>
-        <select id="veterinario" asp-for="mascota.Veterinario.Id" name = "veterinarioId">
-            <option value="0">Seleccione un Veterinario</option>
-            @foreach (var veterinario in Model.listaVeterinarios)
-            {
-                <option value="@veterinario.Id">@veterinario.Nombres @veterinario.Apellidos</option>
-            }
-        </select>
-        <br>        
-        <input type="submit" class="btn" value="Editar" >
- 
-</form>
-<br>
-<br>
-<a asp-area="" asp-page="/Mascotas/ListaMascotas">Volver A Lista Mascotas</a>
+            <form method="post">
 
+                <input type="hidden" asp-for="mascota.Id">
+
+                <input asp-for="mascota.Nombre" id="controls" type="text" class="form-control mb-3"
+                    placeholder="Nombre">
+                <br>
+                <input asp-for="mascota.Color" id="controls" type="text" class="form-control mb-3" placeholder="Color">
+                <br>
+                <input asp-for="mascota.Especie" id="controls" type="text" class="form-control mb-3"
+                    placeholder="Especie">
+                <br>
+                <input asp-for="mascota.Raza" id="controls" type="text" class="form-control mb-3" placeholder="Raza">
+                <br>
+                <select id="dueno" asp-for="mascota.Dueno.Id" name="duenoId" class="form-control mb-3">
+                    <option value="0">Seleccione un Dueño</option>
+                    @foreach (var dueno in Model.listaDuenos)
+                    {
+                        <option value="@dueno.Id">@dueno.Nombres @dueno.Apellidos</option>
+                    }
+                </select>
+
+                <select id="veterinario" asp-for="mascota.Veterinario.Id" name="veterinarioId"
+                    class="form-control mb-3">
+                    <option value="0">Seleccione un Veterinario</option>
+                    @foreach (var veterinario in Model.listaVeterinarios)
+                    {
+                        <option value="@veterinario.Id">@veterinario.Nombres @veterinario.Apellidos</option>
+                    }
+                </select>
+
+                <input type="submit" class="btn btn-success" value="Editar">
+
+            </form>
+        </div>
+        <div class="col-md-8">
+            <div class="col-md-9">
+                <br>
+                <br>
+                <a asp-area="" class="btn-fourth" style="background-color: rgb(55, 90, 122);"
+                    asp-page="/Mascotas/ListaMascotas" >Volver A Lista De Mascotas
+                    Mascota</a>
+            </div>
+        </div>
+    </div>
+</main>

@@ -13,6 +13,8 @@ namespace MascotaFeliz.App.Frontend.Pages
     {
         private readonly IRepositorioVeterinario _repoVeterinario; 
         public IEnumerable<Veterinario> listaVeterinarios {get;set;}
+        [BindProperty]
+        public Veterinario veterinario { get; set; }
 
         public ListaVeterinariosModel()
         {
@@ -26,8 +28,26 @@ namespace MascotaFeliz.App.Frontend.Pages
                 _repoVeterinario.DeleteVeterinario(veterinarioId.Value);
             }
 
+            veterinario = new Veterinario();
+
             listaVeterinarios = _repoVeterinario.GetAllVeterinarios();
             return Page();
+        }
+
+        
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            
+            if (veterinario != null)
+            {
+                _repoVeterinario.AddVeterinario(veterinario);
+            }
+            
+            return RedirectToPage("/Veterinarios/ListaVeterinarios");
         }
     }
 }

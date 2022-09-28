@@ -3,38 +3,65 @@
 @{
 }
 
-<h1>Datos Del veterinario consultado</h1>
 
-<div>
-    id: @Model.veterinario.Id
-</div>
 
-<div>
-    cedula: @Model.veterinario.Cedula
-</div>
+<head>
+    <link rel="stylesheet" href="~/css/styleCard.css" />
+    <link rel="stylesheet" href="~/css/stylesFormulario.css">
+</head>
 
-<div>
-    Nombre: @Model.veterinario.Nombres
-</div>
-
-<div>
-    Apellido: @Model.veterinario.Apellidos
-</div>
-
-<div>
-    Direccion: @Model.veterinario.Direccion
-</div>
-
-<div>
-    Telefono: @Model.veterinario.Telefono
-</div>
-
-<div>
-    Tarjeta Profesional: @Model.veterinario.TarjetaProfesional
-</div>
 <br>
 <br>
 <br>
-<div>
-<a asp-area="" asp-page="/Veterinarios/ListaVeterinarios">Volver A Lista Veterinarios</a>
-</div>
+<br>
+<br>
+<main class="container mt-5">
+    <div class="row">
+        <div class="col-md-8" style="background-color: rgb(55, 90, 122); color: white;">
+
+            <h1>Detalles Veterinario</h1>
+            <br>
+            <br>
+            <br>
+
+
+            <div>
+                id: @Model.veterinario.Id
+            </div>
+
+            <div>
+                cedula: @Model.veterinario.Cedula
+            </div>
+
+            <div>
+                Nombre: @Model.veterinario.Nombres
+            </div>
+
+            <div>
+                Apellido: @Model.veterinario.Apellidos
+            </div>
+
+            <div>
+                Direccion: @Model.veterinario.Direccion
+            </div>
+
+            <div>
+                Telefono: @Model.veterinario.Telefono
+            </div>
+
+            <div>
+                Tarjeta Profesional: @Model.veterinario.TarjetaProfesional
+            </div>
+            <br>
+            <br>
+
+        </div>
+
+        <div class="col-md-3-no-shadow">
+            <a class="btn-third" asp-area="" asp-page="/Veterinarios/ListaVeterinarios"
+                style="background-color: rgb(55, 90, 122);">Volver A Lista
+                Veterinarios</a>
+        </div>
+
+    </div>
+</main>
