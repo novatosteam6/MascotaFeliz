@@ -50,6 +50,7 @@ namespace MascotaFeliz.App.Frontend.Pages
             
             if (visitaPyP != null)
             {
+                mascota = _repoMascota.GetMascota(mascotaId);
                 visitaPyP.IdVeterinario = veterinarioId;
                 historia = _repoHistoria.GetHistoria(historiaId);
 
